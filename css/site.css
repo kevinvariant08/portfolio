@@ -460,12 +460,18 @@ dialog.viewer button { position: absolute; top: .5rem; right: .5rem; }
 /* the book's diagrams */
 #book > .wrap + .wrap { margin-top: clamp(3rem, 6vw, 4.5rem); }
 .chapters { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; }
-.chapters span { padding: .45rem .85rem; border-radius: 999px; border: 1px solid rgba(243,241,236,.35); font-size: .85rem; color: var(--on-dark-soft); }
-.chapters span:nth-child(4) { background: var(--gold); border-color: var(--gold); color: var(--navy); font-weight: 600; }
-.plates-title { margin-top: clamp(2.5rem, 5vw, 3.5rem); font-family: var(--display); font-style: italic; font-size: clamp(1.6rem, 3vw, 2.2rem); text-align: center; color: var(--paper); }
-.plates { display: grid; grid-template-columns: repeat(4, minmax(0, 190px)); justify-content: center; gap: clamp(1rem, 2vw, 1.6rem); margin-top: 1.6rem; align-items: start; }
-.plate { padding: .45rem .45rem 2rem; }
-.plate img { aspect-ratio: auto; background: #fff; max-height: 170px; width: 100%; object-fit: contain; }
-.plate figcaption { font-size: .6rem; left: .55rem; right: .55rem; bottom: .5rem; }
-.plate::before { width: 56px; height: 18px; top: -9px; }
-@media (max-width: 900px) { .plates { grid-template-columns: repeat(2, minmax(0, 170px)); } }
+.chapters { margin-top: 1.2rem; }
+.chapters button { padding: .5rem .9rem; min-height: 40px; border-radius: 999px; border: 1px solid rgba(243,241,236,.35); background: transparent; font-size: .85rem; color: var(--on-dark-soft); cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+.chapters button:hover { border-color: var(--gold); color: var(--paper); }
+.chapters button[aria-selected="true"] { background: var(--gold); border-color: var(--gold); color: var(--navy); font-weight: 600; }
+.plates-title { margin-top: 0; font-family: var(--display); font-style: italic; font-size: clamp(1.6rem, 3vw, 2.2rem); text-align: center; color: var(--paper); }
+.plates { display: grid; grid-template-columns: repeat(2, minmax(0, 300px)); justify-content: center; gap: clamp(1.2rem, 3vw, 2.4rem); margin-top: 2rem; align-items: start; }
+.plate { padding: .6rem .6rem 2.2rem; }
+.plate img { aspect-ratio: 6 / 5; width: 100%; height: auto; object-fit: contain; background: #fff; }
+.plate figcaption { font-size: .66rem; }
+.plates:not([hidden]) .plate { animation: plate-in .45s var(--ease) both; }
+.plates:not([hidden]) .plate:nth-child(2) { animation-delay: .07s; }
+@keyframes plate-in { from { opacity: 0; transform: translateY(14px) rotate(var(--r, 0deg)); } }
+@media (prefers-reduced-motion: reduce) { .plates:not([hidden]) .plate { animation: none; } }
+@media (max-width: 520px) { .plates { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; } .plate figcaption { font-size: .58rem; } }
+dialog.viewer img { background: #fff; padding: 1rem; }

@@ -328,4 +328,14 @@
     });
     box.addEventListener('keydown', e => { const n = notes.find(x => x[2] === e.key.toLowerCase()); if (n) press($(`.key[data-s="${n[1]}"]`, box)); });
   })();
+
+  /* ---------- the book's chapters as tabs, two diagrams each ---------- */
+  (() => {
+    const tabs = $$('.chapters [role="tab"]'); if (!tabs.length) return;
+    const select = t => { tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1; $('#' + x.getAttribute('aria-controls')).hidden = !on; }); };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(t));
+      t.addEventListener('keydown', e => { const d = { ArrowRight: 1, ArrowLeft: -1 }[e.key]; if (!d) return; e.preventDefault(); const n = tabs[(i + d + tabs.length) % tabs.length]; select(n); n.focus(); });
+    });
+  })();
 })();
