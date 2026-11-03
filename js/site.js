@@ -71,7 +71,7 @@
 
   /* ---------- nav: scroll-spy with a sliding highlight ---------- */
   const seg = $('.seg'), blob = $('.seg .blob'), spyLinks = $$('.seg a');
-  const spyTargets = { about: ['#about'], maths: ['#maths', '#olympiads', '#epq', '#pisa', '#xlab', '#book', '#writing'], music: ['#music', '#piano'], projects: ['#projects', '#kevinvariant', '#cevian', '#fingerflow', '#more-projects'] };
+  const spyTargets = { about: ['#about'], maths: ['#maths', '#olympiads', '#epq', '#pisa', '#xlab', '#random-walks', '#book', '#writing'], music: ['#music', '#piano'], projects: ['#projects', '#kevinvariant', '#cevian', '#fingerflow', '#more-projects'] };
   const setActive = key => {
     spyLinks.forEach(a => a.classList.toggle('on', a.dataset.spy === key));
     const a = spyLinks.find(l => l.dataset.spy === key);

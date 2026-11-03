@@ -346,6 +346,48 @@
 
 <div class="torn"></div>
 
+<section class="band b-mist" id="random-walks" aria-labelledby="rw-h">
+  <div class="wrap">
+    <div class="feat flip">
+      <div class="feat-copy pop">
+        <span class="tag">St Catharine's College, Cambridge, August 2026</span>
+        <h3 class="title" id="rw-h">Random walks on lattices and graphs</h3>
+        <p class="lede">A group research paper from the mathematics programme at St Catharine's: how far a random walker strays, whether it comes home, and how long it takes to visit every node of a graph.</p>
+        <div class="notes">
+          <div class="note"><b>1/√(πn)</b><span>roughly the chance a 1D walker is home after 2n steps</span></div>
+          <div class="note dark"><b>7</b><span>authors, written together in Cambridge</span></div>
+        </div>
+        <div class="links" style="margin-top:1rem"><a class="pill solid mag" href="papers/Random_Walk_on_Lattices_and_Graphs.pdf" target="_blank" rel="noopener" data-cur="Read">Read the paper <span class="arr">↗</span></a></div>
+      </div>
+      <figure class="blue" style="margin:0;--r:-1deg">
+        <svg viewBox="0 0 360 230" class="pascal" role="img" aria-label="The probabilities of a one-dimensional walker's position after 0 to 4 steps, which follow Pascal's triangle divided by powers of 2">
+          <g font-family="STIX Two Text, serif" font-size="15" fill="#E6F1F7" text-anchor="middle">
+            <text x="180" y="30">1</text>
+            <text x="150" y="70">½</text><text x="210" y="70">½</text>
+            <text x="120" y="110">¼</text><text x="180" y="110">2⁄4</text><text x="240" y="110">¼</text>
+            <text x="90" y="150">⅛</text><text x="150" y="150">3⁄8</text><text x="210" y="150">3⁄8</text><text x="270" y="150">⅛</text>
+            <text x="60" y="190">1⁄16</text><text x="120" y="190">4⁄16</text><text x="180" y="190" fill="#F2D58A" font-weight="600">6⁄16</text><text x="240" y="190">4⁄16</text><text x="300" y="190">1⁄16</text>
+          </g>
+          <g stroke="#E6F1F7" stroke-opacity=".35" stroke-width="1">
+            <path d="M174 36 L156 58 M186 36 L204 58 M144 76 L126 98 M156 76 L174 98 M204 76 L186 98 M216 76 L234 98 M114 116 L96 138 M126 116 L144 138 M174 116 L156 138 M186 116 L204 138 M234 116 L216 138 M246 116 L264 138 M84 156 L66 178 M96 156 L114 178 M144 156 L126 178 M156 156 L174 178 M204 156 L186 178 M216 156 L234 178 M264 156 L246 178 M276 156 L294 178"/>
+          </g>
+          <text x="180" y="222" font-family="JetBrains Mono, monospace" font-size="10" fill="#A9C9DA" text-anchor="middle">p&#8345;(i) = C(n, (n+i)/2) / 2&#8319;</text>
+        </svg>
+        <figcaption class="blue-cap"><span>Fig. 4, where a walker on ℤ can be</span><span>Pascal's triangle over 2&#8319;</span></figcaption>
+      </figure>
+    </div>
+    <ol class="steps"><li><span>Walk on ℤ</span></li><li><span>Walk on ℤ²</span></li><li><span>k-regular graphs</span></li><li><span>Variations</span></li><li><span><b>Paper</b></span></li></ol>
+    <div class="meta-row">
+      <details class="more-story"><summary><i>+</i> What's in it</summary>
+        <div class="story"><p>On the line ℤ, the walker's position follows Pascal's triangle divided by powers of 2, its variance grows linearly with the number of steps, and Stirling's approximation gives a return probability of about 1/√(πn). Those terms sum to infinity, so the walk is recurrent: it comes back to the start.</p><p>On the grid ℤ², a change to diagonal coordinates splits the walk into two independent one-dimensional walks, and the same argument shows it is recurrent too. The paper then studies walks on finite k-regular graphs, including how long it takes to visit every node, and ends with variations closer to real life, including counting non-intersecting walks with the Lindström–Gessel–Viennot lemma.</p></div>
+      </details>
+      <div class="chips"><span>Probability</span><span>Stirling's approximation</span><span>LGV lemma</span><span>Group of 7</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="torn"></div>
+
 <section class="band b-navy" id="book" aria-labelledby="book-h">
   <div class="wrap feat">
     <figure class="print pop" style="--r:-3deg;max-width:340px;justify-self:center;padding-bottom:.7rem">
@@ -634,7 +676,7 @@
         <li><b>Mathematical Modelling and Scenario-Based Practice (XLAB)</b><span class="meta">ASEEDER at SUAT, Shenzhen. <i>27 to 31 December 2025.</i> Investment, flight-scheduling and epidemic models in Python, and the denoising project above</span></li>
         <li><b>Introduction to Probability (STAT110x)</b><span class="meta">HarvardX on edX</span></li>
         <li><b>Number Theory</b><span class="meta">Stanford Pre-Collegiate Studies</span></li>
-        <li><b>Mathematics programme</b><span class="meta">St Catharine's College, Cambridge</span></li>
+        <li><b>Mathematics programme</b><span class="meta">St Catharine's College, Cambridge. <i>August 2026.</i> Co-wrote the group paper <a href="papers/Random_Walk_on_Lattices_and_Graphs.pdf" target="_blank" rel="noopener" style="color:var(--velvet)">Random Walk on Lattices and Graphs</a></span></li>
         <li><b>Audio Signal Processing for Music Applications</b><span class="meta">Coursera</span></li>
         <li><b>Mathematics at the p-adic level</b><span class="meta">Unifrog MOOC</span></li>
         <li><b>Dukes Cambridge Summer School, Sciences and Technology</b><span class="meta"><i>August 2025.</i> Two-week STEM pathway, with a tutor recommendation</span></li>
