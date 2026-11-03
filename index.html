@@ -264,6 +264,10 @@ h4 { font-size: 1rem; font-weight: 600; }
 .music .soft { color: var(--on-velvet-soft); }
 .music .title { font-style: italic; }
 .music-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 1.5rem clamp(2rem, 5vw, 4rem); align-items: end; margin-bottom: clamp(2rem, 4vw, 3rem); }
+.prize { margin: 0 0 clamp(2rem, 4vw, 3rem); display: grid; gap: .5rem; }
+.prize img { width: 100%; height: auto; aspect-ratio: 1588 / 392; object-fit: cover; object-position: 40% 30%; }
+.prize figcaption { font-size: .9rem; color: var(--on-velvet-soft); }
+@media (max-width: 640px) { .prize img { aspect-ratio: 16 / 9; } }
 .perf { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 2rem clamp(1.25rem, 3vw, 2.5rem); align-items: start; }
 .perf-main { display: grid; gap: clamp(2rem, 4vw, 3rem); align-content: start; }
 .perf-side { display: grid; gap: 1.25rem; align-content: start; }
@@ -656,6 +660,11 @@ h4 { font-size: 1rem; font-weight: 600; }
         <p>I've played for thirteen years and compose in the gaps. I took the ABRSM ARSM performance diploma with distinction (49/50) in 2018, and my 2025 GCSE Music mark was the highest in the world.</p>
       </div>
     </div>
+
+    <figure class="prize">
+      <img src="media/prize.webp" width="1588" height="392" loading="lazy" alt="Kevin on stage beside a grand piano, holding a 1st prize winner certificate, with the presenter holding flowers">
+      <figcaption>Receiving a 1st prize on stage.</figcaption>
+    </figure>
 
     <div class="perf">
       <div class="perf-main">
