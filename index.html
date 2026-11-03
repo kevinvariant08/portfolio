@@ -1,0 +1,969 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kaiyang (Kevin) Hu</title>
+<meta name="description" content="Kaiyang (Kevin) Hu: mathematics student at Dubai College. Research, the olympiad geometry book Beyond the Incenter, writing, software, honours and piano.">
+<meta property="og:title" content="Kaiyang (Kevin) Hu">
+<meta property="og:description" content="Research, the olympiad geometry book Beyond the Incenter, writing, projects, honours and piano.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="media/hero-piano.webp">
+<meta name="theme-color" content="#141C33">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141C33'/%3E%3Ccircle cx='32' cy='35' r='22' fill='none' stroke='%23D4B05C' stroke-width='3'/%3E%3Cpath d='M14 46 L36 13 L52 46 Z' fill='none' stroke='%23F2F1F5' stroke-width='3' stroke-linejoin='round'/%3E%3Ccircle cx='34' cy='35' r='9' fill='none' stroke='%23EE9AAA' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Instrument+Sans:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: an academic monograph. Didone headings, calm reading columns, one live construction in the opening
+   screen, a navy band for research and a velvet band (the cloth on Kevin's piano) for music. */
+:root {
+  --paper: #F3F2F6;
+  --paper-2: #E8E6EF;
+  --ink: #141C33;
+  --ink-soft: #4B5169;
+  --line: #CFCCDB;
+  --velvet: #761226;
+  --velvet-deep: #5A0C1C;
+  --on-velvet: #F7ECEE;
+  --on-velvet-soft: #E4C6CC;
+  --gold: #9C7419;
+  --link: #761226;
+  --band: #141C33;
+  --on-band: #F2F1F5;
+  --band-soft: #B9BDD0;
+  --band-gold: #D4B05C;
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", "Times New Roman", serif;
+  --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --math: "STIX Two Text", "STIX Two", "Cambria Math", "Times New Roman", serif;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  --wide: 72rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0C1324; --paper-2: #131C32; --ink: #ECEAF2; --ink-soft: #A6ABBF; --line: #2C3550;
+    --velvet: #861A30; --velvet-deep: #63101F; --on-velvet: #F8EDEF; --on-velvet-soft: #E6C6CD;
+    --gold: #D4B05C; --link: #EE9AAA;
+    --band: #1A2542; --on-band: #ECEAF2; --band-soft: #AEB3C8; --band-gold: #D9B866;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0C1324; --paper-2: #131C32; --ink: #ECEAF2; --ink-soft: #A6ABBF; --line: #2C3550;
+  --velvet: #861A30; --velvet-deep: #63101F; --on-velvet: #F8EDEF; --on-velvet-soft: #E6C6CD;
+  --gold: #D4B05C; --link: #EE9AAA;
+  --band: #1A2542; --on-band: #ECEAF2; --band-soft: #AEB3C8; --band-gold: #D9B866;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.62; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img, video { max-width: 100%; display: block; }
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: .18em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+p { margin: 0; }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; font-weight: 400; }
+.wrap { max-width: var(--wide); margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.prose { max-width: 38rem; display: grid; gap: 1rem; }
+.soft { color: var(--ink-soft); }
+.math { font-family: var(--math); }
+.label { font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
+.links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; font-weight: 500; }
+.links a[target]::after { content: " \2197"; font-size: .85em; }
+
+/* Contents key */
+.key {
+  position: fixed; z-index: 30; top: calc(env(safe-area-inset-top, 0px) + 14px); right: calc(var(--gutter-r) + 4px);
+  font: 600 .78rem/1 var(--body); letter-spacing: .14em; text-transform: uppercase;
+  background: var(--paper); color: var(--ink); border: 1.5px solid var(--ink); padding: .8rem 1rem; min-height: 44px; cursor: pointer; border-radius: 999px;
+}
+.key:hover { background: var(--ink); color: var(--paper); }
+.toc { position: fixed; inset: 0; z-index: 40; background: var(--velvet); color: var(--on-velvet); overflow-y: auto; padding-block: calc(env(safe-area-inset-top, 0px) + 5rem) 3rem; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.toc ol { list-style: none; margin: 0 auto; padding: 0; max-width: 44rem; display: grid; gap: .1rem; }
+.toc a { display: flex; align-items: baseline; gap: .75rem; color: var(--on-velvet); text-decoration: none; font-family: var(--display); font-size: clamp(1.6rem, 4.5vw, 2.5rem); line-height: 1.3; }
+.toc a::after { content: ""; flex: 1; border-bottom: 2px dotted var(--on-velvet-soft); opacity: .5; order: 1; transform: translateY(-.3em); }
+.toc a span { order: 2; font: italic 1rem/1 var(--math); color: var(--on-velvet-soft); }
+.toc a:hover { font-style: italic; }
+.toc .close { background: var(--on-velvet); color: var(--velvet); border-color: var(--on-velvet); }
+
+/* Opening screen */
+.hero { position: relative; overflow: hidden; isolation: isolate; border-bottom: 1px solid var(--line); }
+.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.handle { position: absolute; z-index: 3; width: 44px; height: 44px; margin: -22px 0 0 -22px; padding: 0; border: 0; background: transparent; cursor: grab; touch-action: none; border-radius: 50%; }
+.handle::before { content: ""; position: absolute; inset: 15px; border-radius: 50%; background: var(--paper); border: 2px solid var(--gold); transition: transform .15s; }
+.handle:hover::before, .handle.drag::before { transform: scale(1.3); }
+.handle.drag { cursor: grabbing; }
+.hero-inner { position: relative; z-index: 2; pointer-events: none; max-width: var(--wide); margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); padding-block: clamp(6rem, 12vw, 9rem) clamp(2.5rem, 5vw, 4rem); display: grid; gap: 1.75rem; }
+.hero-inner a, .hero-inner button { pointer-events: auto; }
+.hero-text { max-width: 36rem; display: grid; gap: 1.5rem; }
+.name { font-family: var(--display); font-weight: 600; font-size: clamp(3.3rem, 9vw, 7.4rem); line-height: .9; letter-spacing: -.015em; }
+.name .kev { display: block; font-style: italic; font-weight: 400; font-size: .36em; letter-spacing: 0; color: var(--link); margin-top: .35em; }
+.intro { font-size: clamp(1.1rem, 1.7vw, 1.3rem); line-height: 1.5; }
+.hero-contact { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; font-weight: 500; }
+.hero-nav { max-width: 36rem; display: flex; flex-wrap: wrap; gap: .35rem 1.4rem; margin-top: 1.5rem; padding-top: 1.1rem; border-top: 1px solid var(--line); font-size: .95rem; }
+.hero-nav a { color: var(--ink); text-decoration: none; padding-block: .3rem; }
+.hero-nav a:hover { color: var(--link); text-decoration: underline; }
+.readout { position: absolute; z-index: 2; right: var(--gutter-r); bottom: 1.1rem; font-family: var(--math); font-size: .98rem; text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-soft); }
+.readout b { font-weight: 600; color: var(--link); }
+@media (max-width: 860px) {
+  .hero-inner { padding-block: 5rem 330px; }
+  .hero-text { max-width: none; }
+  .readout { left: var(--gutter-l); right: auto; text-align: left; }
+}
+
+/* Sections */
+section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+.title { font-family: var(--display); font-size: clamp(2.3rem, 5.2vw, 4.2rem); line-height: 1; letter-spacing: -.01em; }
+.title-row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .75rem 2rem; margin-bottom: clamp(2rem, 4vw, 3rem); }
+.title-row .aside { max-width: 26rem; color: var(--ink-soft); }
+h3 { font-family: var(--display); font-size: clamp(1.5rem, 2.8vw, 2.1rem); line-height: 1.15; }
+h4 { font-size: 1rem; font-weight: 600; }
+.figure { margin: 0; display: grid; gap: .55rem; }
+.figure img { width: 100%; height: auto; border: 1px solid var(--line); background: #fff; }
+.figure figcaption { font-size: .88rem; color: var(--ink-soft); }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 2.5rem clamp(2rem, 6vw, 5rem); align-items: start; }
+.lede { font-family: var(--display); font-size: clamp(1.4rem, 2.4vw, 1.85rem); line-height: 1.35; }
+.lede em { color: var(--link); }
+.facts { display: grid; gap: .85rem; margin: 0; padding: 1.4rem; background: var(--paper-2); }
+.facts div { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1rem; }
+.facts dt { color: var(--ink-soft); font-size: .9rem; padding-top: .1rem; }
+.facts dd { margin: 0; }
+@media (max-width: 860px) { .about-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 420px) { .facts div { grid-template-columns: minmax(0, 1fr); gap: 0; } }
+
+/* Research band */
+.research { background: var(--band); color: var(--on-band); }
+.research .soft, .research .label { color: var(--band-soft); }
+.research a { color: var(--band-gold); }
+.research .figure img { border-color: transparent; }
+.research .figure figcaption { color: var(--band-soft); }
+.r-feature { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 2rem clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.r-feature + .r-feature { margin-top: clamp(3.5rem, 7vw, 5.5rem); padding-top: clamp(2.5rem, 5vw, 3.5rem); border-top: 1px solid color-mix(in srgb, var(--on-band) 22%, transparent); }
+.r-feature .q { font-family: var(--display); font-style: italic; font-size: 1.15rem; line-height: 1.45; }
+.gibbs { background: color-mix(in srgb, var(--on-band) 7%, var(--band)); padding: 1rem; display: grid; gap: .8rem; }
+.gibbs canvas { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; font-size: .92rem; }
+.controls label { display: flex; align-items: center; gap: .6rem; }
+.controls input[type="range"] { width: min(13rem, 50vw); accent-color: var(--band-gold); }
+.seg { display: inline-flex; border: 1.5px solid currentColor; border-radius: 999px; overflow: hidden; }
+.seg button { font: inherit; background: transparent; color: inherit; border: 0; padding: .5rem .85rem; min-height: 44px; cursor: pointer; }
+.research .seg button[aria-pressed="true"] { background: var(--band-gold); color: #141C33; font-weight: 600; }
+.gibbs-out { display: flex; flex-wrap: wrap; gap: .3rem 2rem; font-family: var(--math); font-variant-numeric: tabular-nums; font-size: .98rem; }
+.results { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: .95rem; margin-top: .25rem; }
+.results th, .results td { text-align: left; padding: .5rem .6rem .5rem 0; border-bottom: 1px solid color-mix(in srgb, var(--on-band) 20%, transparent); }
+.results th { font-weight: 600; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--band-soft); }
+.results td.n { font-family: var(--math); }
+.results tr.best td { color: var(--band-gold); font-weight: 600; }
+.table-wrap { overflow-x: auto; }
+.r-list { margin-top: clamp(3.5rem, 7vw, 5rem); padding-top: clamp(2.5rem, 5vw, 3.5rem); border-top: 1px solid color-mix(in srgb, var(--on-band) 22%, transparent); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; }
+.r-list article { display: grid; gap: .55rem; align-content: start; }
+.r-list h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); }
+.tag { font-family: var(--math); font-style: italic; color: var(--band-gold); }
+.pending { font-size: .9rem; font-style: italic; color: var(--band-soft); }
+@media (max-width: 900px) { .r-feature { grid-template-columns: minmax(0, 1fr); } .r-list { grid-template-columns: minmax(0, 1fr); } }
+
+/* Book */
+.book { background: var(--paper-2); }
+.book-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 2.5rem clamp(2rem, 6vw, 5rem); align-items: center; }
+.cover { margin: 0; }
+.cover img { width: 100%; max-width: 360px; height: auto; aspect-ratio: 640 / 934; box-shadow: 0 24px 50px -26px rgba(12, 19, 36, .7); margin-inline: auto; }
+.book .title { font-style: italic; }
+.book .sub { font-family: var(--math); font-style: italic; font-size: 1.15rem; color: var(--ink-soft); margin-top: .5rem; }
+.book .prose { margin-top: 1.75rem; }
+.pull { font-family: var(--display); font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.4; border-left: 3px solid var(--gold); padding-left: 1rem; }
+@media (max-width: 860px) { .book-grid { grid-template-columns: minmax(0, 1fr); } .cover img { max-width: 260px; } }
+
+/* Writing: the 12-coin lab */
+.article-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem clamp(2rem, 5vw, 4rem); align-items: end; }
+.article-head h3 { font-style: italic; }
+.lab { margin-top: 2rem; border: 1px solid var(--line); background: var(--paper-2); padding: clamp(1rem, 2.5vw, 1.6rem); display: grid; gap: 1.25rem; }
+.lab-row { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; align-items: center; }
+.lab-row .seg button[aria-pressed="true"], .toggle[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.toggle { font: inherit; background: transparent; color: var(--ink); border: 1.5px solid var(--ink); border-radius: 999px; padding: .5rem 1rem; min-height: 44px; cursor: pointer; }
+.coins { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: .4rem; max-width: 44rem; }
+.coin { aspect-ratio: 1; min-height: 40px; border-radius: 50%; border: 2px solid #9C7419; cursor: pointer; background: radial-gradient(circle at 35% 30%, #F3DC9A, #C99A32 70%); color: #3A2A06; font: 600 .95rem/1 var(--math); position: relative; padding: 0; }
+.coin[aria-pressed="true"] { outline: 3px solid var(--link); outline-offset: 2px; }
+.lab-out { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 1.25rem 2rem; align-items: center; }
+.scales { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+.scales figure { margin: 0; display: grid; gap: .3rem; justify-items: center; }
+.scales svg { width: 100%; height: auto; overflow: visible; }
+.scales .beam, .scales .beam-pan { transition: transform .6s cubic-bezier(.3, 1.25, .5, 1); transform-box: view-box; transform-origin: 120px 40px; }
+@media (prefers-reduced-motion: reduce) { .scales .beam, .scales .beam-pan { transition: none; } }
+.scales .st { stroke: var(--ink); stroke-width: 3; fill: none; stroke-linecap: round; }
+.scales .pan { fill: var(--paper); stroke: var(--ink); stroke-width: 2; }
+.scales .c { fill: #D8B04F; stroke: #8E6A14; stroke-width: 1; }
+.scales .cf { fill: var(--velvet); stroke: var(--velvet-deep); }
+.scales text { font: 600 9px/1 var(--math); fill: #3A2A06; text-anchor: middle; dominant-baseline: central; }
+.scales .cf + text { fill: var(--on-velvet); }
+.scales figcaption { font-family: var(--math); font-size: .9rem; font-variant-numeric: tabular-nums; }
+.matrix-wrap { overflow-x: auto; }
+.matrix { border-collapse: collapse; font-family: var(--math); font-variant-numeric: tabular-nums; font-size: .98rem; }
+.matrix th { font-weight: 400; font-size: .76rem; color: var(--ink-soft); padding: .15rem .35rem; }
+.matrix td { text-align: right; padding: .2rem .35rem; min-width: 1.9rem; }
+.matrix td.hit { background: color-mix(in srgb, var(--velvet) 22%, var(--paper)); font-weight: 600; }
+.matrix .lb, .matrix .rb { padding: 0; width: .5rem; min-width: .5rem; border: 2px solid var(--ink); }
+.matrix .lb { border-right: 0; } .matrix .rb { border-left: 0; }
+.matrix tr:not(:first-child):not(:last-child) .lb, .matrix tr:not(:first-child):not(:last-child) .rb { border-top: 0; border-bottom: 0; }
+.matrix tr:nth-child(2) .lb, .matrix tr:nth-child(2) .rb { border-bottom: 0; }
+.matrix tr:last-child .lb, .matrix tr:last-child .rb { border-top: 0; }
+.verdict { font-family: var(--display); font-size: clamp(1.15rem, 2vw, 1.5rem); line-height: 1.35; }
+.verdict em { color: var(--link); }
+.writeups { margin-top: clamp(3rem, 6vw, 4rem); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 1.5rem clamp(2rem, 5vw, 4rem); }
+.writeups ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 2.5rem; }
+.writeups li { display: grid; gap: .1rem; }
+.writeups li span { color: var(--ink-soft); font-size: .92rem; }
+@media (max-width: 860px) { .article-head, .writeups, .lab-out { grid-template-columns: minmax(0, 1fr); } .writeups ul { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .coins { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .6rem; } }
+
+/* Projects */
+.alt { background: var(--paper-2); }
+.proj { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 2rem clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.proj + .proj { margin-top: clamp(3rem, 6vw, 4.5rem); }
+.proj.flip { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+.proj.flip .proj-media { order: 2; }
+.proj-media img { width: 100%; height: auto; border: 1px solid var(--line); }
+.with { font-family: var(--math); font-style: italic; color: var(--ink-soft); margin-top: .2rem; }
+.proj .prose { margin-top: 1rem; }
+.kbd { width: 100%; height: auto; }
+.kbd .w { fill: var(--paper); stroke: var(--ink); stroke-width: 1.5; }
+.kbd .b { fill: var(--ink); }
+.kbd .hit { fill: color-mix(in srgb, var(--velvet) 25%, var(--paper)); }
+.kbd text { font-family: var(--math); font-size: 15px; fill: var(--ink); text-anchor: middle; }
+.kbd .fing { fill: var(--link); font-weight: 600; font-size: 17px; }
+.kbd .arc { fill: none; stroke: var(--link); stroke-width: 1.5; }
+.small-builds { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; margin-top: clamp(3rem, 6vw, 4rem); padding-top: 2rem; border-top: 1px solid var(--line); }
+.small-builds article { display: grid; gap: .3rem; align-content: start; }
+.small-builds h4 { font-family: var(--display); font-size: 1.3rem; font-weight: 500; }
+.small-builds .when { font-family: var(--math); font-style: italic; color: var(--link); }
+@media (max-width: 900px) { .proj, .proj.flip { grid-template-columns: minmax(0, 1fr); } .proj.flip .proj-media { order: 0; } .small-builds { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .small-builds { grid-template-columns: minmax(0, 1fr); } }
+
+/* Honours */
+.hon-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 3rem clamp(2rem, 6vw, 5rem); }
+.hon h3 { margin-bottom: .9rem; font-size: clamp(1.35rem, 2.3vw, 1.75rem); }
+.ledger { list-style: none; margin: 0; padding: 0; display: grid; }
+.ledger li { display: grid; grid-template-columns: 5.4rem minmax(0, 1fr); gap: 1rem; padding-block: .55rem; border-bottom: 1px solid var(--line); }
+.ledger .yr { font-family: var(--math); font-variant-numeric: tabular-nums; color: var(--ink-soft); }
+.ledger b { font-weight: 600; }
+.ledger .n { display: block; color: var(--ink-soft); font-size: .92rem; }
+.hon + .hon { margin-top: 2.5rem; }
+@media (max-width: 860px) { .hon-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 420px) { .ledger li { grid-template-columns: minmax(0, 1fr); gap: 0; } }
+
+/* Music */
+.music { background: var(--velvet); color: var(--on-velvet); }
+.music a { color: var(--on-velvet); }
+.music .soft { color: var(--on-velvet-soft); }
+.music .title { font-style: italic; }
+.music-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 1.5rem clamp(2rem, 5vw, 4rem); align-items: end; margin-bottom: clamp(2rem, 4vw, 3rem); }
+.perf { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 2rem clamp(1.25rem, 3vw, 2.5rem); align-items: start; }
+.perf-main { display: grid; gap: clamp(2rem, 4vw, 3rem); align-content: start; }
+.perf-side { display: grid; gap: 1.25rem; align-content: start; }
+.clip { margin: 0; display: grid; gap: .45rem; min-width: 0; align-content: start; }
+.clip video { width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--velvet-deep); object-fit: cover; }
+.clip figcaption { display: grid; gap: .05rem; font-size: .9rem; }
+.clip figcaption b { font-family: var(--display); font-weight: 500; font-size: 1.1rem; }
+.clip.big figcaption b { font-size: 1.35rem; }
+.music h3 { font-style: italic; margin-bottom: 1rem; font-size: clamp(1.35rem, 2.3vw, 1.75rem); }
+.prizes { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+.prizes li { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr); gap: 1rem; }
+.prizes .yr { font-family: var(--math); font-variant-numeric: tabular-nums; color: var(--on-velvet-soft); }
+.comps { margin-top: clamp(3rem, 6vw, 4rem); }
+.tracks { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(1.5rem, 4vw, 3.5rem); }
+.track { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: .9rem; align-items: center; padding-block: .55rem; border-bottom: 1px solid color-mix(in srgb, var(--on-velvet) 22%, transparent); }
+.track:nth-child(-n+2) { border-top: 1px solid color-mix(in srgb, var(--on-velvet) 22%, transparent); }
+.track.wide { grid-column: 1 / -1; }
+.play { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--on-velvet); background: transparent; color: var(--on-velvet); cursor: pointer; display: grid; place-items: center; padding: 0; }
+.play svg { width: 14px; height: 14px; fill: currentColor; }
+.play[aria-pressed="true"] { background: var(--on-velvet); color: var(--velvet); }
+.track .t { display: grid; gap: .05rem; min-width: 0; }
+.track .t b { font-family: var(--display); font-weight: 500; font-size: 1.08rem; }
+.track .t span { font-size: .85rem; color: var(--on-velvet-soft); }
+.bar { height: 4px; background: color-mix(in srgb, var(--on-velvet) 25%, transparent); margin-top: .35rem; cursor: pointer; position: relative; }
+.bar i { position: absolute; inset: 0 auto 0 0; width: 0; background: var(--on-velvet); }
+.track time { font-family: var(--math); font-variant-numeric: tabular-nums; font-size: .9rem; color: var(--on-velvet-soft); }
+.music-note { margin-top: 1.1rem; font-size: .82rem; color: var(--on-velvet-soft); }
+@media (max-width: 860px) { .music-intro, .perf { grid-template-columns: minmax(0, 1fr); } .perf-side { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .tracks { grid-template-columns: minmax(0, 1fr); } .track:nth-child(2) { border-top: 0; } }
+@media (max-width: 560px) { .perf-side { grid-template-columns: minmax(0, 1fr); } }
+
+/* Courses and leadership */
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem clamp(2rem, 6vw, 5rem); }
+.two .title { font-size: clamp(2rem, 4vw, 3.1rem); margin-bottom: 1.5rem; }
+.entries { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.15rem; }
+.entries li { display: grid; gap: .1rem; }
+.entries .meta { font-size: .9rem; color: var(--ink-soft); }
+.entries .meta i { font-family: var(--math); }
+@media (max-width: 860px) { .two { grid-template-columns: minmax(0, 1fr); } }
+
+/* Contact */
+.contact { background: var(--band); color: var(--on-band); padding-block: clamp(3.5rem, 8vw, 6rem) clamp(2.5rem, 5vw, 3.5rem); }
+.contact .title { font-style: italic; }
+.contact-list { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem 3rem; }
+.contact-list li { display: grid; gap: .25rem; border-top: 1px solid color-mix(in srgb, var(--on-band) 35%, var(--band)); padding-top: .8rem; align-content: start; }
+.contact-list .k { font-size: .82rem; color: var(--band-soft); }
+.contact-list .v { color: var(--on-band); font-family: var(--display); font-size: clamp(1.2rem, 2.1vw, 1.55rem); overflow-wrap: anywhere; user-select: all; }
+.contact-list a.v { text-decoration: none; user-select: auto; }
+.contact-list a.v:hover { text-decoration: underline; color: var(--band-gold); }
+.copy { justify-self: start; font: 500 .85rem/1 var(--body); background: transparent; color: var(--band-gold); border: 1px solid currentColor; border-radius: 999px; padding: .55rem .9rem; min-height: 40px; cursor: pointer; }
+.colophon { margin-top: 3.5rem; font-size: .82rem; color: var(--band-soft); display: flex; flex-wrap: wrap; gap: .5rem 2rem; justify-content: space-between; }
+.colophon a { color: inherit; }
+</style>
+</head>
+<body>
+
+<button class="key" id="keyBtn" type="button" aria-expanded="false" aria-controls="toc">Contents</button>
+<nav class="toc" id="toc" hidden aria-label="Contents">
+  <button class="key close" id="tocClose" type="button">Close</button>
+  <ol>
+    <li><a href="#about">About <span>who I am</span></a></li>
+    <li><a href="#research">Research <span>EPQ, PISA paper, XLAB</span></a></li>
+    <li><a href="#book">Beyond the Incenter <span>the book</span></a></li>
+    <li><a href="#writing">Writing <span>magazine and solutions</span></a></li>
+    <li><a href="#projects">Projects <span>Kevinvariant and software</span></a></li>
+    <li><a href="#honours">Honours <span>maths, computing, school</span></a></li>
+    <li><a href="#music">Piano <span>recordings and pieces</span></a></li>
+    <li><a href="#courses">Courses and leadership</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="hero" id="top">
+  <canvas id="geo" aria-hidden="true"></canvas>
+  <button class="handle" data-v="0" type="button" aria-label="Vertex A of the triangle. Drag it, or use the arrow keys."></button>
+  <button class="handle" data-v="1" type="button" aria-label="Vertex B of the triangle. Drag it, or use the arrow keys."></button>
+  <button class="handle" data-v="2" type="button" aria-label="Vertex C of the triangle. Drag it, or use the arrow keys."></button>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1 class="name">Kaiyang Hu<span class="kev">Kevin</span></h1>
+      <p class="intro">Year 13 at Dubai College in the UAE, applying to read mathematics. I research Fourier methods, wrote an olympiad geometry book, and play the piano.</p>
+      <p class="hero-contact"><a href="mailto:kevin96496@gmail.com">kevin96496@gmail.com</a><a href="https://www.linkedin.com/in/kevin-hu-83522829b/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/kevinvariant08" target="_blank" rel="noopener">GitHub</a></p>
+    </div>
+    <nav class="hero-nav" aria-label="Sections">
+      <a href="#about">About</a><a href="#research">Research</a><a href="#book">Book</a><a href="#writing">Writing</a><a href="#projects">Projects</a><a href="#honours">Honours</a><a href="#music">Piano</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <p class="readout"><i>OI</i> = <b id="oiVal">0.000</b> &nbsp; √(<i>R</i>² − 2<i>Rr</i>) = <b id="eulVal">0.000</b></p>
+</header>
+
+<section id="about" aria-labelledby="about-h">
+  <div class="wrap about-grid">
+    <div class="prose">
+      <h2 id="about-h" class="lede">I'm drawn to the moments when intuition is wrong. I expected the sum of ever-smaller fractions to settle down, and the harmonic series <em>diverges</em>.</h2>
+      <p>It took me pages of drafts to find the grouping that proves it, and I came away knowing that terms shrinking to zero is necessary but not enough. Saccheri was so sure of Euclid's parallel postulate that he walked away from hyperbolic geometry. That gap between what feels true and what is true is why I want to study mathematics.</p>
+      <p>I have played the piano since I was three. It taught me to break a hard passage into parts and get each one exactly right, which is how I work through a proof. When a younger pianist with small hands kept asking me for fingerings, I built a model that finds them for any pair of hands instead.</p>
+    </div>
+    <dl class="facts">
+      <div><dt>School</dt><dd>Dubai College, since 2020</dd></div>
+      <div><dt>A levels</dt><dd>Mathematics, Further Mathematics, Physics, Computer Science</dd></div>
+      <div><dt>GCSEs, 2025</dt><dd>Straight 9s and the highest GCSE Music mark in the world</dd></div>
+      <div><dt>Olympiads</dt><dd>BMO1 Silver, BMO2 Merit, Maclaurin Gold, AIME 11/15</dd></div>
+      <div><dt>Roles</dt><dd>Deputy Head of the Maths Society, Head of the Applied Maths Club</dd></div>
+      <div><dt>Languages</dt><dd>Chinese, English, French, some Arabic</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="research" id="research" aria-labelledby="res-h">
+  <div class="wrap">
+    <div class="title-row">
+      <h2 class="title" id="res-h">Research</h2>
+      <p class="aside soft">Applied maths I've taken past the syllabus, mostly where it meets signals and sound.</p>
+    </div>
+
+    <div class="r-feature">
+      <div class="prose">
+        <p class="label">Extended Project Qualification, 2025 to now</p>
+        <h3>Windowing and the Gibbs phenomenon</h3>
+        <p class="q">To what extent do mathematical windowing techniques resolve the Gibbs phenomenon in the Fourier approximation of non-continuous signals?</p>
+        <p class="soft">Cut a Fourier series off after <i class="math">N</i> terms and it overshoots every jump by about 9% of the jump, however large <i class="math">N</i> gets. I derived the Gibbs constant, then treated each window as a set of weights on the Fourier coefficients and compared how far it cuts the overshoot against how much it blurs the jump.</p>
+        <p class="soft">No window wins on both. The more a window suppresses the overshoot, the wider the transition gets, so the right window depends on what the signal is for.</p>
+      </div>
+      <figure class="gibbs" style="margin:0">
+        <canvas id="gibbs" width="800" height="450" aria-label="Partial Fourier sum of a square wave with the chosen window"></canvas>
+        <div class="controls">
+          <label for="gN">Terms <input id="gN" type="range" min="1" max="40" value="12"> <output id="gNo" class="math">12</output></label>
+          <div class="seg" role="group" aria-label="Window">
+            <button type="button" data-w="rect" aria-pressed="true">Rectangular</button>
+            <button type="button" data-w="lanczos" aria-pressed="false">Lanczos</button>
+            <button type="button" data-w="hann" aria-pressed="false">Hann</button>
+          </div>
+        </div>
+        <figcaption class="gibbs-out"><span>Overshoot <b id="gOver">0</b> of the jump</span><span>10% to 90% rise <b id="gRise">0</b></span></figcaption>
+      </figure>
+    </div>
+
+    <div class="r-feature">
+      <div class="prose">
+        <p class="label">Independent research paper, 2026</p>
+        <h3>Mathematics achievement in the UAE's private schools</h3>
+        <p class="q">Understanding Student Mathematics Achievement in Diverse Socio-economic Contexts: A Multi-level Analysis of Private Schools in the United Arab Emirates</p>
+        <p class="soft">Using PISA 2022 data for 10,668 students in 104 UAE private schools, I fitted two-level hierarchical linear models in MLwiN, with all plausible values combined by Rubin's rules and PISA's sampling weights at both levels. About 27% of the variation in maths scores lies between schools.</p>
+        <p class="soft">Maths self-efficacy, immigrant status, maths anxiety and the school's average socio-economic status were the strongest predictors. The socio-economic gradient is steeper for first-generation immigrants, and anxiety hurts more in more advantaged schools.</p>
+        <p class="links"><a href="papers/Hu_UAE_PISA_2022_Maths_Achievement.pdf" target="_blank" rel="noopener">Read the paper (PDF)</a></p>
+      </div>
+      <div style="display:grid;gap:1rem">
+        <div class="table-wrap">
+          <table class="results">
+            <caption class="label" style="text-align:left;padding-bottom:.6rem">Selected estimates, Model 2 (PISA maths points)</caption>
+            <thead><tr><th scope="col">Predictor</th><th scope="col">Estimate</th><th scope="col">S.E.</th></tr></thead>
+            <tbody>
+              <tr class="best"><td>School mean socio-economic status</td><td class="n">+50.13</td><td class="n">3.50</td></tr>
+              <tr><td>First-generation immigrant</td><td class="n">+31.12</td><td class="n">2.09</td></tr>
+              <tr><td>Maths self-efficacy</td><td class="n">+19.65</td><td class="n">1.06</td></tr>
+              <tr><td>Student socio-economic status</td><td class="n">+13.29</td><td class="n">1.86</td></tr>
+              <tr><td>Maths anxiety</td><td class="n">−10.02</td><td class="n">0.88</td></tr>
+              <tr><td>Social connections</td><td class="n">−10.73</td><td class="n">1.14</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="soft" style="font-size:.88rem">All six are significant at p &lt; .001. Indices are PISA scales; immigrant status is relative to native and second-generation students.</p>
+      </div>
+    </div>
+
+    <div class="r-feature">
+      <div class="prose">
+        <p class="label">XLAB research project, SUAT Shenzhen, December 2025</p>
+        <h3>Denoising signals with Fourier transforms</h3>
+        <p class="soft">On the XLAB mathematical modelling programme, I built a test signal from 50, 120 and 200 Hz sine waves sampled at 1 kHz, buried it in Gaussian white noise, and cleaned it in the frequency domain: FFT, filter, inverse FFT. I compared low-pass, high-pass and band-pass filters with an adaptive band-pass that sets its band from the peaks it detects.</p>
+        <p class="soft">The adaptive filter gave the highest signal-to-noise ratio and the lowest error. The whole pipeline ran in a few milliseconds per signal, fast enough for real-time use. Next I want to try non-Gaussian noise.</p>
+      </div>
+      <div style="display:grid;gap:1.25rem">
+        <figure class="figure">
+          <img src="media/xlab-spectra-800.webp" srcset="media/xlab-spectra-800.webp 800w, media/xlab-spectra.webp 1600w" sizes="(max-width: 900px) 100vw, 40rem" width="1600" height="337" loading="lazy" alt="Three plots: the clean and noisy signals over 0.1 seconds, the clean spectrum with peaks at 50, 120 and 200 Hz, and the noisy spectrum with the same peaks above a noise floor">
+          <figcaption>The test signal in time, and its spectrum before and after noise.</figcaption>
+        </figure>
+        <div class="table-wrap">
+          <table class="results">
+            <thead><tr><th scope="col">Filter</th><th scope="col">Band</th><th scope="col">SNR (dB)</th><th scope="col">MSE</th></tr></thead>
+            <tbody>
+              <tr><td>Low-pass</td><td class="n">0 to 150 Hz</td><td class="n">14.2</td><td class="n">0.038</td></tr>
+              <tr><td>High-pass</td><td class="n">above 100 Hz</td><td class="n">9.5</td><td class="n">0.186</td></tr>
+              <tr><td>Band-pass</td><td class="n">80 to 220 Hz</td><td class="n">16.1</td><td class="n">0.025</td></tr>
+              <tr class="best"><td>Adaptive band-pass</td><td class="n">42 to 230 Hz</td><td class="n">17.3</td><td class="n">0.019</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="r-list">
+      <article>
+        <p class="tag">Signal processing</p>
+        <h3>Taking a piano note apart</h3>
+        <p class="soft">Fourier models of the waveforms of musical notes, used to analyse and resynthesise them and to predict how much quality is lost. Spectrograms, FFT and STFT, in Python.</p>
+      </article>
+      <article>
+        <p class="tag">Probability</p>
+        <h3>Crowds as Markov chains</h3>
+        <p class="soft">For a campus navigation app, I modelled pedestrians as a Markov chain on a graph of the school, with one parameter that moves them from a random walk to purposeful walks towards a destination.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book" aria-labelledby="book-h">
+  <div class="wrap book-grid">
+    <figure class="cover">
+      <img src="media/book-front.webp" width="640" height="934" loading="lazy" alt="Front cover of Beyond the Incenter by Kevin Hu: a triangle with its circumcircle, incircle and nine-point circle in gold and blue on navy">
+    </figure>
+    <div>
+      <p class="label">Book</p>
+      <h2 class="title" id="book-h">Beyond the Incenter</h2>
+      <p class="sub">A Modern Monograph on Olympiad Geometry. First edition, August 2026.</p>
+      <div class="prose">
+        <p>Seven chapters and more than 100 olympiad geometry problems, from the triangle's five centres to cross ratios, radical axes, projective geometry and spiral similarity. Each problem has commentary comparing more than one route, so the reader sees why the clean solution works and the coordinate bash doesn't. I typeset it all, diagrams included, in LaTeX.</p>
+        <p class="pull">At a school of over a thousand students, I found three people who knew Menelaus's theorem.</p>
+        <p>UKMT markers' reports keep calling geometry "one of the least attempted" questions, and most good books start at training-camp level. This one is the step before: from A-level maths to problems from the BMO, USAMO, China and the IMO Shortlist.</p>
+        <p class="links"><a href="https://www.amazon.co.uk/dp/B0HCDN9VFL" target="_blank" rel="noopener">Buy on Amazon</a><a href="https://kevinvariant08.github.io/cross-ratios.pdf" target="_blank" rel="noopener">Read the sample chapter</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="writing" aria-labelledby="wr-h">
+  <div class="wrap">
+    <div class="title-row">
+      <h2 class="title" id="wr-h">Writing</h2>
+      <p class="aside">For the Dubai College Maths Society magazine, and solutions anyone can read.</p>
+    </div>
+    <div class="article-head">
+      <div>
+        <p class="label">Maths Society magazine</p>
+        <h3>The Legendary 12&#8209;coin Problem: A Linear Algebra Approach</h3>
+      </div>
+      <div class="prose">
+        <p>Twelve coins, at most one fake, a balance and three weighings: find the fake and whether it's heavy or light. My article solves it twice, first by minimax casework, then with a 3 × 12 weighing matrix.</p>
+        <p class="soft">Each row is a weighing: −1 puts a coin on the left pan, 1 on the right, 0 leaves it off. If no column is zero, no two columns are equal or opposite, and each row sums to zero, the three readings point at exactly one column. Choose a fake to try it.</p>
+      </div>
+    </div>
+
+    <div class="lab" id="lab">
+      <div class="lab-row">
+        <div class="seg" role="group" aria-label="The fake coin is">
+          <button type="button" data-k="1" aria-pressed="true">Heavier</button>
+          <button type="button" data-k="-1" aria-pressed="false">Lighter</button>
+        </div>
+        <button type="button" class="toggle" id="noFake" aria-pressed="false">No fake</button>
+      </div>
+      <div class="coins" id="coins" role="group" aria-label="Choose the fake coin"></div>
+      <div class="lab-out">
+        <div class="scales" id="scales"></div>
+        <div class="matrix-wrap"><table class="matrix" id="matrix" aria-label="Weighing matrix"></table></div>
+      </div>
+      <p class="verdict" id="verdict" aria-live="polite"></p>
+    </div>
+    <p class="soft" style="margin-top:1rem;max-width:44rem">The same pooling idea is group testing: during COVID-19, labs combined swabs from several patients in one tube to save tests and time.</p>
+
+    <div class="writeups">
+      <h3>Solutions and problem sets</h3>
+      <ul>
+        <li><a href="https://kevinvariant08.github.io/UKMT_SMC_2026_Solutions.pdf" target="_blank" rel="noopener">UKMT Senior Mathematical Challenge 2026</a><span>All 25 problems, diagrams redrawn in tkz-euclide</span></li>
+        <li><a href="https://kevinvariant08.github.io/ISL_2025_sol.pdf" target="_blank" rel="noopener">IMO Shortlist 2025, G1 to G3</a><span>The first three geometry problems</span></li>
+        <li><a href="https://kevinvariant08.github.io/PC.pdf" target="_blank" rel="noopener">Purple Comet! Math Meet 2026</a><span>All 30 High School problems with remarks</span></li>
+        <li><a href="https://kevinvariant08.github.io/BMO2_2011_Sol.pdf" target="_blank" rel="noopener">British Mathematical Olympiad Round 2, 2011</a><span>Solutions and insights</span></li>
+        <li><a href="https://kevinvariant08.github.io/Mock_BMO.pdf" target="_blank" rel="noopener">Kevin's Mathematical Olympiad, Round 1</a><span>An original BMO1-style mock, with <a href="https://kevinvariant08.github.io/KMO_solutions.pdf" target="_blank" rel="noopener">solutions</a></span></li>
+        <li><a href="https://kevinvariant08.github.io/Hu_Collection_Part_1.pdf" target="_blank" rel="noopener">The HU Collection, Part 1</a><span>Invariants and symmetry, with <a href="https://kevinvariant08.github.io/Hu_Collection_Part_2.pdf" target="_blank" rel="noopener">Part 2</a> on combinatorial processes</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="projects" aria-labelledby="pr-h">
+  <div class="wrap">
+    <div class="title-row">
+      <h2 class="title" id="pr-h">Projects</h2>
+      <p class="aside">Mostly tools for learning maths, plus one for pianists and one game.</p>
+    </div>
+
+    <article class="proj">
+      <div class="proj-media">
+        <img src="media/kevinvariant-800.webp" srcset="media/kevinvariant-800.webp 800w, media/kevinvariant.webp 1600w" sizes="(max-width: 900px) 100vw, 38rem" width="1600" height="1000" loading="lazy" alt="The Kevinvariant home page, with a draggable triangle showing its incircle and circumcircle">
+      </div>
+      <div>
+        <h3>Kevinvariant</h3>
+        <div class="prose">
+          <p>My free website for Oxbridge admissions tests and olympiads: twelve original TMUA mock sets and six ESAT sets with worked solutions, olympiad mocks and write-ups, a proof marker and a mock interview simulator.</p>
+          <p class="soft">Smart Practice is an adaptive test built on item response theory. It keeps a posterior for the student's ability and serves the most informative question next; a weekly GitHub Action refits question difficulty from anonymous answers. In simulation it reached a standard error of 0.4 in 11 questions, where random practice needed 30.</p>
+          <p class="links"><a href="https://kevinvariant08.github.io/" target="_blank" rel="noopener">Visit the site</a><a href="https://kevinvariant08.github.io/simulation/note/smart_practice_note.pdf" target="_blank" rel="noopener">Simulation note</a></p>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj flip">
+      <div class="proj-media">
+        <img src="media/cevian-800.webp" srcset="media/cevian-800.webp 800w, media/cevian.webp 1600w" sizes="(max-width: 900px) 100vw, 38rem" width="1600" height="1000" loading="lazy" alt="Cevian home page: a problem card and the kyu belt ladder from 8 kyu to 1 kyu">
+      </div>
+      <div>
+        <h3>Cevian</h3>
+        <div class="prose">
+          <p>A ranked dojo for contest maths. Problems climb a kyu ladder from 8 kyu (AMC 8) to 1 kyu (the hardest olympiad proofs); the first draft holds 110 of them.</p>
+          <p class="soft">It runs as static files with no backend, so answers are stored as salted hashes rather than plain text. Proof problems get a LaTeX editor and a rubric, and duels run against a timed opponent with an Elo rating.</p>
+          <p class="links"><a href="https://github.com/kevinvariant08/cevian" target="_blank" rel="noopener">Code on GitHub</a></p>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="proj-media">
+        <svg class="kbd" id="kbd" viewBox="0 0 560 200" role="img" aria-label="A right-hand fingering for a C major scale over one octave: 1 2 3 1 2 3 4 5, with the thumb passing under after E"></svg>
+      </div>
+      <div>
+        <h3>FingerFlow</h3>
+        <p class="with">with Marc Al Kareh</p>
+        <div class="prose">
+          <p>Upload a photo of a score and your hand span, and FingerFlow suggests fingerings that suit your hands.</p>
+          <p class="soft">Each finger-to-finger move gets a biomechanical cost (key geometry, span scaled to the hand, legato and tempo), and a second-order Viterbi decoder finds the cheapest sequence. The weights are learnt from the PIG dataset of human fingerings. Pianists agree with each other on only 71.4% of notes, so that is the real ceiling.</p>
+          <p class="links"><a href="https://github.com/MarcAlKareh/fingerflow" target="_blank" rel="noopener">Code on GitHub</a></p>
+        </div>
+      </div>
+    </article>
+
+    <div class="small-builds">
+      <article><h4>Way2Class</h4><p class="when">A-level NEA</p><p class="soft">Campus navigation that routes around busy corridors, using A* with vector pruning, a 3NF database and simulated live congestion.</p></article>
+      <article><h4>Kung Fooled</h4><p class="when">with Kavish</p><p class="soft">A troll platformer in ten art styles where every stage hides traps. <a href="https://github.com/KavishM23/kung-fooled" target="_blank" rel="noopener">Code</a></p></article>
+      <article><h4>PlanIt</h4><p class="when">UAE InnovAIte Hackathon 2025</p><p class="soft">An AI timetable that weighs stress and priority to ease teenagers' workloads.</p></article>
+      <article><h4>Focus leaderboard</h4><p class="when">Code Battle 2025, 5th of 30</p><p class="soft">A screen-time tracker with a live leaderboard that rewards deep focus.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="honours" aria-labelledby="hon-h">
+  <div class="wrap">
+    <div class="title-row">
+      <h2 class="title" id="hon-h">Honours</h2>
+      <p class="aside">Most recent first. Rankings are as reported by each competition.</p>
+    </div>
+    <div class="hon-grid">
+      <div class="hon">
+        <h3>Mathematics</h3>
+        <ul class="ledger">
+          <li><span class="yr">2026</span><span><b>Merit, British Mathematical Olympiad Round 2</b><span class="n">Highest in year, global top 50</span></span></li>
+          <li><span class="yr">2026</span><span><b>Bronze, Senior ISMTF</b></span></li>
+          <li><span class="yr">2026</span><span><b>AIME II, 11 out of 15</b><span class="n">Top 8%</span></span></li>
+          <li><span class="yr">2026</span><span><b>AMC 12B Honor Roll of Distinction</b><span class="n">AIME qualification</span></span></li>
+          <li><span class="yr">2025</span><span><b>Silver, British Mathematical Olympiad Round 1</b><span class="n">Highest in school, global top 40</span></span></li>
+          <li><span class="yr">2025</span><span><b>Gold, UKMT Maclaurin Olympiad</b><span class="n">Global top 20</span></span></li>
+          <li><span class="yr">2024, 2025</span><span><b>Perfect score, UKMT Senior Mathematical Challenge</b><span class="n">Twice</span></span></li>
+          <li><span class="yr">2025</span><span><b>1st place, Y11 Challenge ME</b></span></li>
+          <li><span class="yr">2023, 2025</span><span><b>1st place, Dubai Math Super League</b></span></li>
+          <li><span class="yr">2024</span><span><b>Merit, British Mathematical Olympiad Round 1</b></span></li>
+          <li><span class="yr">2024</span><span><b>Silver, UKMT Hamilton Olympiad</b></span></li>
+          <li><span class="yr">2023</span><span><b>Bronze, UKMT Cayley Olympiad</b></span></li>
+          <li><span class="yr">2021, 2022</span><span><b>Gold and Bronze, UKMT Junior Mathematical Olympiad</b></span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="hon">
+          <h3>Computer science</h3>
+          <ul class="ledger">
+            <li><span class="yr">2025</span><span><b>5th of 30 teams, Code Battle</b><span class="n">Representing Dubai College</span></span></li>
+            <li><span class="yr">2025</span><span><b>UAE InnovAIte Hackathon</b><span class="n">Built PlanIt</span></span></li>
+            <li><span class="yr">2024/25</span><span><b>Finals qualifier, American Computer Science League</b></span></li>
+            <li><span class="yr">2023</span><span><b>Overall winner, Dubai College Internal Hackathon</b></span></li>
+          </ul>
+        </div>
+        <div class="hon">
+          <h3>School and other</h3>
+          <ul class="ledger">
+            <li><span class="yr">2025</span><span><b>GCSEs: straight 9s</b><span class="n">Pearson Edexcel High Achiever Award; highest mark in the world for GCSE Music</span></span></li>
+            <li><span class="yr">2023</span><span><b>Duke of Edinburgh's International Award, Bronze</b></span></li>
+          </ul>
+        </div>
+        <div class="hon">
+          <h3>Piano</h3>
+          <p class="soft">Competition prizes and the ARSM diploma are listed with my <a href="#music">recordings</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="music" id="music" aria-labelledby="mu-h">
+  <div class="wrap">
+    <div class="music-intro">
+      <h2 class="title" id="mu-h">At the piano</h2>
+      <div class="prose">
+        <p>I've played for thirteen years and compose in the gaps. I took the ABRSM ARSM performance diploma with distinction (49/50) in 2018, and my 2025 GCSE Music mark was the highest in the world.</p>
+      </div>
+    </div>
+
+    <div class="perf">
+      <div class="perf-main">
+        <figure class="clip big">
+          <video controls preload="none" playsinline poster="media/campanella.webp" src="media/campanella.mp4" width="960" height="540"></video>
+          <figcaption><b>Liszt: La Campanella, S. 141 No. 3</b><span class="soft">2023, opening 50 seconds</span></figcaption>
+        </figure>
+        <div>
+          <h3>Competitions</h3>
+          <ul class="prizes">
+            <li><span class="yr">2025</span><span>1st prize, 1st Steinway Piano Competition GCC, Dubai</span></li>
+            <li><span class="yr">2025</span><span>Piano award, Young Musicians of the Gulf (also 2022 and 2023)</span></li>
+            <li><span class="yr">2023</span><span>1st prize, New Talent Festival Competition, London</span></li>
+            <li><span class="yr">2022</span><span>3rd prize, Fujairah International Piano Competition</span></li>
+            <li><span class="yr">2022</span><span>3rd prize, "Merci, Maestro!" International Competition of Young Pianists, Brussels</span></li>
+            <li><span class="yr">2018</span><span>ABRSM ARSM Performance Diploma, distinction</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="perf-side">
+        <figure class="clip">
+          <video controls preload="none" playsinline poster="media/waldstein-640.webp" src="media/waldstein.mp4" width="960" height="540"></video>
+          <figcaption><b>Beethoven: "Waldstein" Sonata, I</b><span class="soft">2025, opening 50 seconds</span></figcaption>
+        </figure>
+        <figure class="clip">
+          <video controls preload="none" playsinline poster="media/gargoyles-640.webp" src="media/gargoyles.mp4" width="960" height="540"></video>
+          <figcaption><b>Liebermann: Gargoyles, Op. 29 No. 1</b><span class="soft">2024, opening 50 seconds</span></figcaption>
+        </figure>
+        <figure class="clip">
+          <video controls preload="none" playsinline poster="media/bwv855-640.webp" src="media/bwv855.mp4" width="960" height="540"></video>
+          <figcaption><b>Bach: Prelude and Fugue in E minor, BWV 855</b><span class="soft">2022, opening 50 seconds</span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="comps">
+      <h3>Compositions</h3>
+      <ol class="tracks">
+        <li class="track wide" data-src="media/piano-concerto-1.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Piano Concerto No. 1"></button><div class="t"><b>Piano Concerto No. 1 in D minor: I.</b><span>Piano, violins and cellos</span><div class="bar"><i></i></div></div><time>0:00</time></li>
+        <li class="track" data-src="media/beethoven-variations.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Variations on Beethoven's Seventh Symphony"></button><div class="t"><b>Variations on Beethoven's Seventh</b><span>Two pianos</span><div class="bar"><i></i></div></div><time>0:00</time></li>
+        <li class="track" data-src="media/drift.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Drift"></button><div class="t"><b>Drift</b><span>Two pianos, minimalist</span><div class="bar"><i></i></div></div><time>0:00</time></li>
+        <li class="track" data-src="media/allegro-in-bb.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Allegro in B flat"></button><div class="t"><b>Allegro in B♭</b><span>Piano</span><div class="bar"><i></i></div></div><time>0:00</time></li>
+        <li class="track" data-src="media/impromptu-in-eb.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Impromptu in E flat"></button><div class="t"><b>Impromptu in E♭</b><span>Piano</span><div class="bar"><i></i></div></div><time>0:00</time></li>
+        <li class="track" data-src="media/lullaby-in-ab.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Lullaby in A flat"></button><div class="t"><b>Lullaby in A♭</b><span>Piano</span><div class="bar"><i></i></div></div><time>0:00</time></li>
+        <li class="track" data-src="media/berceuse-in-d.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Berceuse in D major"></button><div class="t"><b>Berceuse in D major</b><span>Piano</span><div class="bar"><i></i></div></div><time>0:00</time></li>
+      </ol>
+      <p class="music-note">Composition audio is rendered from my scores with the Salamander Grand Piano samples by Alexander Holm (CC BY 3.0).</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="courses" aria-label="Courses, certificates and leadership">
+  <div class="wrap two">
+    <div>
+      <h2 class="title">Courses and certificates</h2>
+      <ul class="entries">
+        <li><b>Mathematical Modelling and Scenario-Based Practice (XLAB)</b><span class="meta">ASEEDER at SUAT, Shenzhen. <i>27 to 31 December 2025.</i> Investment models, flight scheduling and epidemic models in Python, and the denoising project above</span></li>
+        <li><b>Introduction to Probability (STAT110x)</b><span class="meta">HarvardX on edX</span></li>
+        <li><b>Number Theory</b><span class="meta">Stanford Pre-Collegiate Studies</span></li>
+        <li><b>Mathematics programme</b><span class="meta">St Catharine's College, Cambridge</span></li>
+        <li><b>Audio Signal Processing for Music Applications</b><span class="meta">Coursera</span></li>
+        <li><b>Mathematics at the p-adic level</b><span class="meta">Unifrog MOOC</span></li>
+        <li><b>Dukes Cambridge Summer School, Sciences and Technology</b><span class="meta"><i>August 2025.</i> Two-week STEM pathway, with a tutor recommendation</span></li>
+        <li><b>Intern, IT project management</b><span class="meta">AAMER Logistics, Abu Dhabi. <i>8 to 16 December 2025.</i> Power BI analysis and project plans for two apps</span></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="title">Leading and teaching</h2>
+      <ul class="entries">
+        <li><b>Deputy Head, Dubai College Mathematics Society</b><span class="meta"><i>September 2025 to now.</i> Running internal and inter-school competitions, writing olympiad questions and publishing the magazine</span></li>
+        <li><b>Head, Applied Maths Club</b><span class="meta"><i>October 2025 to now.</i> Weekly olympiad sessions for Years 9 to 11, with problems I write</span></li>
+        <li><b>Student teaching assistant and class captain</b><span class="meta"><i>September 2024 to now.</i> Maths and modern languages classes</span></li>
+        <li><b>Tutor</b><span class="meta">GCSE maths and beginner olympiad problems for younger students</span></li>
+        <li><b>Computer Science Society</b><span class="meta">Three years of hackathons; helped design DC Carshare, a student carpooling app</span></li>
+        <li><b>Piano ensembles</b><span class="meta">School concerts</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="contact" id="contact" aria-labelledby="ct-h">
+  <div class="wrap">
+    <h2 class="title" id="ct-h">Get in touch</h2>
+    <ul class="contact-list">
+      <li><span class="k">Email</span><a class="v" id="em" href="mailto:kevin96496@gmail.com">kevin96496@gmail.com</a><button class="copy" type="button" data-copy="em">Copy email</button></li>
+      <li><span class="k">Phone</span><a class="v" id="ph" href="tel:+971505206658">+971 50 520 6658</a><button class="copy" type="button" data-copy="ph">Copy number</button></li>
+      <li><span class="k">LinkedIn</span><a class="v" href="https://www.linkedin.com/in/kevin-hu-83522829b/" target="_blank" rel="noopener">Kevin Hu</a></li>
+      <li><span class="k">Code</span><a class="v" href="https://github.com/kevinvariant08" target="_blank" rel="noopener">github.com/kevinvariant08</a></li>
+      <li><span class="k">Website</span><a class="v" href="https://kevinvariant08.github.io/" target="_blank" rel="noopener">Kevinvariant</a></li>
+      <li><span class="k">Instagram</span><a class="v" href="https://www.instagram.com/kevinvariant/" target="_blank" rel="noopener">@kevinvariant</a></li>
+    </ul>
+    <div class="colophon"><span>© 2026 Kaiyang (Kevin) Hu</span><a href="#top">Back to the top</a></div>
+  </div>
+</footer>
+</main>
+
+<script>
+(() => {
+    const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const isDark = () => document.documentElement.dataset.theme === 'dark' || (document.documentElement.dataset.theme !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+  const onTheme = fn => { matchMedia('(prefers-color-scheme: dark)').addEventListener('change', fn); new MutationObserver(fn).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); };
+
+  /* Contents overlay */
+  const keyBtn = document.getElementById('keyBtn'), toc = document.getElementById('toc');
+  const openToc = () => { toc.hidden = false; keyBtn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; toc.querySelector('a').focus(); };
+  const closeToc = (focus = true) => { toc.hidden = true; keyBtn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; if (focus) keyBtn.focus(); };
+  keyBtn.addEventListener('click', openToc);
+  document.getElementById('tocClose').addEventListener('click', () => closeToc());
+  toc.addEventListener('click', e => { if (e.target.closest('a')) closeToc(false); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && !toc.hidden) closeToc(); });
+
+  /* Copy buttons */
+  document.querySelectorAll('.copy').forEach(b => b.addEventListener('click', () => {
+    const el = document.getElementById(b.dataset.copy), label = b.textContent;
+    const done = t => { b.textContent = t; setTimeout(() => { b.textContent = label; }, 1600); };
+    const select = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); done('Selected, press Ctrl+C'); };
+    if (navigator.clipboard) navigator.clipboard.writeText(el.textContent.trim()).then(() => done('Copied'), select); else select();
+  }));
+
+  /* Opening screen: a triangle with circumcircle, incircle, nine-point circle and Euler line */
+  const hero = document.querySelector('.hero'), cv = document.getElementById('geo'), ctx = cv.getContext('2d');
+  const handles = [...document.querySelectorAll('.handle')];
+  let W = 0, H = 0, dpr = 1;
+  const narrow = () => innerWidth <= 860;
+  const base = () => narrow() ? [[.42, 1 - 295 / H], [.93, 1 - 70 / H], [.1, 1 - 130 / H]] : [[.7, .1], [.97, .86], [.58, .66]];
+  let frac = [[0, 0], [0, 0], [0, 0]], moved = [false, false, false];
+  const pts = () => frac.map(([x, y]) => [x * W, y * H]);
+  function size() { dpr = Math.min(devicePixelRatio || 1, 2); const r = hero.getBoundingClientRect(); W = r.width; H = r.height; frac = frac.map((f, i) => moved[i] ? f : base()[i]); cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); draw(); }
+  const sub = (p, q) => [p[0] - q[0], p[1] - q[1]], len = v => Math.hypot(v[0], v[1]);
+  function circumcenter(A, B, C) {
+    const d = 2 * (A[0] * (B[1] - C[1]) + B[0] * (C[1] - A[1]) + C[0] * (A[1] - B[1]));
+    const a2 = A[0] ** 2 + A[1] ** 2, b2 = B[0] ** 2 + B[1] ** 2, c2 = C[0] ** 2 + C[1] ** 2;
+    return [(a2 * (B[1] - C[1]) + b2 * (C[1] - A[1]) + c2 * (A[1] - B[1])) / d, (a2 * (C[0] - B[0]) + b2 * (A[0] - C[0]) + c2 * (B[0] - A[0])) / d];
+  }
+  function draw() {
+    if (!W) return;
+    const [A, B, C] = pts();
+    handles.forEach((h, i) => { h.style.left = [A, B, C][i][0] + 'px'; h.style.top = [A, B, C][i][1] + 'px'; });
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
+    const a = len(sub(B, C)), b = len(sub(C, A)), c = len(sub(A, B));
+    const area = Math.abs((B[0] - A[0]) * (C[1] - A[1]) - (C[0] - A[0]) * (B[1] - A[1])) / 2;
+    if (area < 50) return;
+    const s = (a + b + c) / 2, r = area / s, R = a * b * c / (4 * area);
+    const I = [(a * A[0] + b * B[0] + c * C[0]) / (2 * s), (a * A[1] + b * B[1] + c * C[1]) / (2 * s)];
+    const O = circumcenter(A, B, C), Hc = [A[0] + B[0] + C[0] - 2 * O[0], A[1] + B[1] + C[1] - 2 * O[1]], N = [(O[0] + Hc[0]) / 2, (O[1] + Hc[1]) / 2];
+    const ink = css('--ink'), gold = css('--gold'), soft = css('--ink-soft'), red = css('--link');
+    const circ = (P, rad, col, w, dash) => { ctx.beginPath(); ctx.setLineDash(dash || []); ctx.strokeStyle = col; ctx.lineWidth = w; ctx.arc(P[0], P[1], rad, 0, 7); ctx.stroke(); ctx.setLineDash([]); };
+    const seg = (P, Q, col, w, dash) => { ctx.beginPath(); ctx.setLineDash(dash || []); ctx.strokeStyle = col; ctx.lineWidth = w; ctx.moveTo(P[0], P[1]); ctx.lineTo(Q[0], Q[1]); ctx.stroke(); ctx.setLineDash([]); };
+    const dot = (P, col, rad = 3) => { ctx.beginPath(); ctx.fillStyle = col; ctx.arc(P[0], P[1], rad, 0, 7); ctx.fill(); };
+    ctx.globalAlpha = .75;
+    circ(O, R, gold, 1.2);
+    circ(N, R / 2, soft, .9, [3, 6]);
+    const e = sub(Hc, O), el = len(e) || 1, ex = [e[0] / el, e[1] / el], far = Math.hypot(W, H);
+    seg([O[0] - ex[0] * far, O[1] - ex[1] * far], [O[0] + ex[0] * far, O[1] + ex[1] * far], gold, .9, [2, 7]);
+    seg(A, B, ink, 1.4); seg(B, C, ink, 1.4); seg(C, A, ink, 1.4);
+    circ(I, r, red, 1.6);
+    seg(O, I, red, 2.2);
+    dot(O, gold); dot(I, red); dot(N, soft, 2.2);
+    ctx.globalAlpha = 1;
+    ctx.font = 'italic 16px "STIX Two Text", serif'; ctx.fillStyle = ink;
+    const g = [(A[0] + B[0] + C[0]) / 3, (A[1] + B[1] + C[1]) / 3];
+    [[A, 'A'], [B, 'B'], [C, 'C']].forEach(([P, n]) => { const v = sub(P, g), L = len(v) || 1; ctx.fillText(n, P[0] + v[0] / L * 24 - 5, P[1] + v[1] / L * 24 + 6); });
+    ctx.fillText('O', O[0] + 7, O[1] - 7); ctx.fillText('I', I[0] + 7, I[1] - 7);
+    const unit = Math.min(W, H) / 6;
+    document.getElementById('oiVal').textContent = (len(sub(O, I)) / unit).toFixed(3);
+    document.getElementById('eulVal').textContent = (Math.sqrt(Math.max(R * R - 2 * R * r, 0)) / unit).toFixed(3);
+  }
+  new ResizeObserver(size).observe(hero);
+  let lastDpr = devicePixelRatio;
+  setInterval(() => { if (devicePixelRatio !== lastDpr) { lastDpr = devicePixelRatio; size(); } }, 1000);
+  onTheme(draw);
+  const clampF = v => Math.min(.98, Math.max(.02, v));
+  handles.forEach((h, i) => {
+    h.addEventListener('pointerdown', e => { e.preventDefault(); h.setPointerCapture(e.pointerId); h.classList.add('drag'); moved[i] = true; });
+    h.addEventListener('pointermove', e => { if (!h.hasPointerCapture(e.pointerId)) return; const r = hero.getBoundingClientRect(); frac[i] = [clampF((e.clientX - r.left) / W), clampF((e.clientY - r.top) / H)]; draw(); });
+    const end = e => { h.classList.remove('drag'); if (h.hasPointerCapture(e.pointerId)) h.releasePointerCapture(e.pointerId); };
+    h.addEventListener('pointerup', end); h.addEventListener('pointercancel', end);
+    h.addEventListener('keydown', e => {
+      const st = e.shiftKey ? .05 : .015, m = { ArrowLeft: [-st, 0], ArrowRight: [st, 0], ArrowUp: [0, -st], ArrowDown: [0, st] }[e.key];
+      if (!m) return; e.preventDefault(); moved[i] = true; frac[i] = [clampF(frac[i][0] + m[0]), clampF(frac[i][1] + m[1])]; draw();
+    });
+  });
+  size();
+  if (document.fonts) document.fonts.ready.then(draw);
+
+  /* Keyboard with a fingering (FingerFlow) */
+  (() => {
+    const svg = document.getElementById('kbd'), names = ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'], fingers = [1, 2, 3, 1, 2, 3, 4, 5];
+    const kw = 56, top = 60; let h = '';
+    for (let i = 0; i < 10; i++) h += `<rect class="w${i < 8 ? ' hit' : ''}" x="${i * kw + .75}" y="${top}" width="${kw - 1.5}" height="132" rx="3"/>`;
+    [0, 1, 3, 4, 5, 7, 8].forEach(i => { h += `<rect class="b" x="${(i + 1) * kw - kw * .3}" y="${top}" width="${kw * .6}" height="82" rx="2"/>`; });
+    names.forEach((n, i) => { h += `<text x="${i * kw + kw / 2}" y="${top + 120}">${n}</text><text class="fing" x="${i * kw + kw / 2}" y="${top - 18}">${fingers[i]}</text>`; });
+    h += `<path class="arc" d="M ${2 * kw + kw * .7} ${top - 40} q ${kw * .3} -16 ${kw * .6} 0"/>`;
+    svg.innerHTML = h;
+  })();
+
+  /* Gibbs phenomenon: square wave partial sums with a window on the coefficients */
+  (() => {
+    const cvs = document.getElementById('gibbs'), g = cvs.getContext('2d'), nIn = document.getElementById('gN'), nOut = document.getElementById('gNo');
+    let win = 'rect';
+    const weight = (j, N) => { const x = j / (N + 1); if (win === 'rect') return 1; if (win === 'hann') return .5 * (1 + Math.cos(Math.PI * x)); return Math.sin(Math.PI * x) / (Math.PI * x); };
+    const S = (x, N) => { let s = 0; for (let j = 1; j <= N; j++) { const k = 2 * j - 1; s += weight(j, N) * Math.sin(k * x) / k; } return 4 / Math.PI * s; };
+    function render() {
+      const N = +nIn.value; nOut.textContent = N;
+      const d = Math.min(devicePixelRatio || 1, 2), w = cvs.clientWidth || 800, h = w * 9 / 16;
+      cvs.width = Math.round(w * d); cvs.height = Math.round(h * d); g.setTransform(d, 0, 0, d, 0, 0);
+      const fg = css('--on-band'), gold = css('--band-gold'), padX = 22, padY = h * .14;
+      const X = x => padX + (x + Math.PI) / (2 * Math.PI) * (w - padX - 8), Y = y => h / 2 - y * (h / 2 - padY) / 1.25;
+      g.clearRect(0, 0, w, h);
+      g.strokeStyle = fg; g.globalAlpha = .22; g.lineWidth = 1;
+      [-1, 0, 1].forEach(v => { g.beginPath(); g.moveTo(padX, Y(v)); g.lineTo(w - 8, Y(v)); g.stroke(); });
+      g.globalAlpha = .5; g.lineWidth = 1.5; g.beginPath();
+      g.moveTo(X(-Math.PI), Y(-1)); g.lineTo(X(0), Y(-1)); g.lineTo(X(0), Y(1)); g.lineTo(X(Math.PI), Y(1)); g.stroke();
+      g.globalAlpha = 1; g.strokeStyle = gold; g.lineWidth = 2.2; g.beginPath();
+      for (let p = 0; p <= 600; p++) { const x = -Math.PI + p / 600 * 2 * Math.PI, y = S(x, N); p ? g.lineTo(X(x), Y(y)) : g.moveTo(X(x), Y(y)); }
+      g.stroke();
+      g.fillStyle = fg; g.globalAlpha = .7; g.font = 'italic 13px "STIX Two Text", serif';
+      g.fillText('1', 4, Y(1) + 4); g.fillText('−1', 2, Y(-1) + 4); g.globalAlpha = 1;
+      let mx = -9, lo = null, hi = null;
+      for (let p = 1; p <= 4000; p++) { const x = p / 4000 * Math.PI / 2, y = S(x, N); if (y > mx) mx = y; if (hi === null && y >= .8) hi = x; }
+      for (let p = 1; p <= 4000; p++) { const x = -p / 4000 * Math.PI / 2; if (lo === null && S(x, N) <= -.8) { lo = x; break; } }
+      const over = Math.max(0, (mx - 1) / 2 * 100);
+      document.getElementById('gOver').textContent = over.toFixed(over < .1 ? 2 : 1) + '%';
+      document.getElementById('gRise').textContent = (hi !== null && lo !== null) ? ((hi - lo) / Math.PI).toFixed(3) + 'π' : 'not reached';
+    }
+    nIn.addEventListener('input', render);
+    document.querySelectorAll('.gibbs .seg button').forEach(b => b.addEventListener('click', () => {
+      win = b.dataset.w; document.querySelectorAll('.gibbs .seg button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); render();
+    }));
+    new ResizeObserver(render).observe(cvs);
+    onTheme(render);
+    render();
+  })();
+
+  /* 12-coin weighing matrix from the magazine article */
+  (() => {
+    const M = [
+      [0, 0, 0, 0, 1, 1, 1, 1, -1, -1, -1, -1],
+      [0, 1, -1, -1, 0, 0, 0, 1, -1, -1, 1, 1],
+      [1, 0, -1, 1, 0, 1, -1, 0, -1, 1, 0, -1]];
+    let fake = 6, kind = 1;
+    const coinsEl = document.getElementById('coins'), scalesEl = document.getElementById('scales'), table = document.getElementById('matrix'), verdict = document.getElementById('verdict'), noFake = document.getElementById('noFake');
+    const kindBtns = [...document.querySelectorAll('#lab .seg button')];
+    for (let j = 0; j < 12; j++) {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'coin'; b.textContent = j + 1; b.setAttribute('aria-label', 'Coin ' + (j + 1));
+      b.addEventListener('click', () => { fake = j; update(); }); coinsEl.appendChild(b);
+    }
+    kindBtns.forEach(b => b.addEventListener('click', () => { kind = +b.dataset.k; if (fake < 0) fake = 6; update(); }));
+    noFake.addEventListener('click', () => { fake = -1; update(); });
+    // Each pan hangs from one end of the beam: the beam rotates and the pans only translate, so they stay level.
+    const pan = (cx, list) => `<path class="st" d="M${cx} 40 L${cx - 30} 66 M${cx} 40 L${cx + 30} 66" style="stroke-width:1.2"/><path class="pan" d="M${cx - 34} 66 h68 l-8 10 h-52 z"/>` +
+      list.map((j, n) => { const x = cx - 22 + (n % 4) * 14.7, y = 57 - Math.floor(n / 4) * 14; return `<g data-coin="${j}"><circle class="c" cx="${x}" cy="${y}" r="6.6"/><text x="${x}" y="${y + .5}">${j + 1}</text></g>`; }).join('');
+    scalesEl.innerHTML = M.map(row => {
+      const L = [], R = []; row.forEach((v, j) => v < 0 ? L.push(j) : v > 0 ? R.push(j) : 0);
+      return `<figure><svg viewBox="0 0 240 145" aria-hidden="true"><path class="st" d="M120 40 V130 M90 132 H150"/><path class="st beam" d="M44 40 H196"/>
+        <g class="panL beam-pan">${pan(44, L)}</g><g class="panR beam-pan">${pan(196, R)}</g><circle cx="120" cy="40" r="4.5" fill="var(--ink)"/></svg><figcaption></figcaption></figure>`;
+    }).join('');
+    const figs = [...scalesEl.querySelectorAll('figure')];
+    const fmt = v => v === -1 ? '−1' : String(v);
+    function update() {
+      [...coinsEl.children].forEach((b, j) => b.setAttribute('aria-pressed', String(j === fake)));
+      kindBtns.forEach(b => b.setAttribute('aria-pressed', String(fake >= 0 && +b.dataset.k === kind)));
+      noFake.setAttribute('aria-pressed', String(fake < 0));
+      const res = M.map(row => fake < 0 ? 0 : row[fake] * kind);
+      figs.forEach((f, i) => {
+        const th = res[i] * 9 * Math.PI / 180, dx = 76 - 76 * Math.cos(th), dy = 76 * Math.sin(th);
+        f.querySelector('.beam').style.transform = `rotate(${res[i] * 9}deg)`;
+        f.querySelector('.panL').style.transform = `translate(${dx}px, ${-dy}px)`;
+        f.querySelector('.panR').style.transform = `translate(${-dx}px, ${dy}px)`;
+        f.querySelectorAll('[data-coin]').forEach(c => c.querySelector('circle').setAttribute('class', +c.dataset.coin === fake ? 'c cf' : 'c'));
+        f.querySelector('figcaption').innerHTML = `<i>r</i><sub>${i + 1}</sub> = ${fmt(res[i])}`;
+      });
+      let html = '<tr><th></th><th></th>' + M[0].map((_, j) => `<th scope="col">${j + 1}</th>`).join('') + '<th></th><th></th><th scope="col"><i>r</i></th></tr>';
+      M.forEach((row, i) => { html += `<tr><th scope="row">W${i + 1}</th><td class="lb"></td>` + row.map((v, j) => `<td class="${j === fake ? 'hit' : ''}">${fmt(v)}</td>`).join('') + `<td class="rb"></td><td></td><td><b>${fmt(res[i])}</b></td></tr>`; });
+      table.innerHTML = html;
+      if (fake < 0) verdict.innerHTML = 'Every weighing balances, so <i>r</i> = (0, 0, 0) matches no column: <em>all twelve coins are real</em>.';
+      else { const v = '(' + res.map(fmt).join(', ') + ')'; verdict.innerHTML = kind > 0 ? `<i>r</i> = ${v} is column ${fake + 1}, so <em>coin ${fake + 1} is heavier</em>.` : `<i>r</i> = ${v} is minus column ${fake + 1}, so <em>coin ${fake + 1} is lighter</em>.`; }
+    }
+    update();
+  })();
+
+  /* Composition player: one track at a time; pauses the videos too */
+  (() => {
+    const icon = on => on ? '<svg viewBox="0 0 14 14"><rect x="2" y="1" width="3.5" height="12"/><rect x="8.5" y="1" width="3.5" height="12"/></svg>' : '<svg viewBox="0 0 14 14"><path d="M3 1 L13 7 L3 13 Z"/></svg>';
+    let current = null;
+    const fmt = s => isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '0:00';
+    document.querySelectorAll('.track').forEach(li => {
+      const btn = li.querySelector('.play'), bar = li.querySelector('.bar'), fill = bar.querySelector('i'), time = li.querySelector('time');
+      btn.innerHTML = icon(false); let audio = null;
+      const ensure = () => {
+        if (audio) return audio;
+        audio = new Audio(li.dataset.src); audio.preload = 'metadata';
+        audio.addEventListener('timeupdate', () => { fill.style.width = (audio.currentTime / (audio.duration || 1) * 100) + '%'; time.textContent = fmt(audio.currentTime); });
+        audio.addEventListener('play', () => { btn.setAttribute('aria-pressed', 'true'); btn.innerHTML = icon(true); });
+        audio.addEventListener('pause', () => { btn.setAttribute('aria-pressed', 'false'); btn.innerHTML = icon(false); });
+        audio.addEventListener('ended', () => { fill.style.width = '0'; time.textContent = '0:00'; });
+        return audio;
+      };
+      btn.addEventListener('click', () => {
+        const a = ensure();
+        if (a.paused) { if (current && current !== a) current.pause(); document.querySelectorAll('video').forEach(v => v.pause()); current = a; a.play().catch(() => {}); }
+        else a.pause();
+      });
+      bar.addEventListener('click', e => { const a = ensure(), r = bar.getBoundingClientRect(), go = () => { a.currentTime = (e.clientX - r.left) / r.width * a.duration; }; a.duration ? go() : a.addEventListener('loadedmetadata', go, { once: true }); });
+    });
+    document.addEventListener('play', e => { if (e.target.tagName === 'VIDEO') { document.querySelectorAll('video').forEach(v => { if (v !== e.target) v.pause(); }); if (current) current.pause(); } }, true);
+  })();
+})();
+</script>
+</body>
+</html>
