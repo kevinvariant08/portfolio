@@ -26,11 +26,10 @@
   <div class="bar-r">
     <nav class="seg" aria-label="Sections">
       <span class="blob" aria-hidden="true"></span>
-      <a href="#research" data-spy="research">Research</a>
-      <a href="#book" data-spy="book">Book</a>
+      <a href="#maths" data-spy="maths">Mathematics</a>
+      <a href="#music" data-spy="music">Music</a>
       <a href="#projects" data-spy="projects">Projects</a>
-      <a href="#honours" data-spy="honours">Honours</a>
-      <a href="#piano" data-spy="piano">Piano</a>
+      <a href="#about" data-spy="about">About</a>
     </nav>
     <button class="snd mag" id="sndBtn" type="button" aria-pressed="false" aria-label="Play my compositions"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5V6l10-2v11.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg><span class="sw" aria-hidden="true"><i></i></span></button>
     <button class="round mag" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16M4 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
@@ -62,12 +61,12 @@
     <div>
       <ol>
         <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#book">Book</a></li>
-        <li><a href="#writing">Writing</a></li>
+        <li><a href="#maths">Mathematics</a></li>
+        <li><a href="#olympiads">Olympiads</a></li>
+        <li><a href="#epq">Research</a></li>
+        <li><a href="#book">The book</a></li>
+        <li><a href="#music">Music</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#honours">Honours</a></li>
-        <li><a href="#piano">Piano</a></li>
         <li><a href="#contact">Contact</a></li>
       </ol>
     </div>
@@ -80,7 +79,8 @@
 <section class="hero" id="hero" aria-label="Introduction">
   <div class="hero-name">
     <h1>Kaiyang Hu<span class="kev">Kevin</span></h1>
-    <p class="hero-sub">Year 13 at Dubai College, applying to read mathematics. I research Fourier methods and statistics, wrote an olympiad geometry book, and play the piano.</p>
+    <p class="hero-sub"><span class="two">Mathematics <i>&amp;</i> music.</span> Year 13 at Dubai College, applying to read mathematics. Olympiad medallist, author of an olympiad geometry book, and a prize-winning pianist.</p>
+    <div class="hero-jump"><a class="pill solid mag" href="#maths">Mathematics ↓</a><a class="pill mag" href="#music">Music ↓</a></div>
   </div>
   <figure class="sticker" id="sticker">
     <img src="media/kevin-sticker.webp" width="620" height="824" alt="Kevin smiling on stage, holding a 1st prize winner certificate">
@@ -98,7 +98,7 @@
   </div>
 </section>
 
-<div class="torn" data-top="#141C33" data-bot="#F3F1EC" data-seed="3"></div>
+<div class="torn"></div>
 
 <section class="band b-paper" id="about" aria-labelledby="about-h">
   <div class="wrap about-grid">
@@ -130,13 +130,100 @@
   </div>
 </section>
 
-<div class="torn" data-top="#F3F1EC" data-bot="#141C33" data-seed="8"></div>
+<div class="torn"></div>
 
-<div class="b-navy intro-title" id="research">
-  <h2 class="big">Things I've <em>researched</em></h2>
-</div>
+<section class="band b-navy chapter" id="maths" aria-labelledby="maths-h">
+  <div class="wrap chapter-grid">
+    <div class="chapter-copy pop">
+      <p class="part">Part one</p>
+      <h2 class="chapter-title" id="maths-h">Mathematics</h2>
+      <p class="lede soft">Olympiads, research, a geometry book, and the writing in between. This is what I want to study.</p>
+      <nav class="jump" aria-label="Mathematics">
+        <a class="pill mag" href="#olympiads">Olympiads</a><a class="pill mag" href="#epq">Research</a><a class="pill mag" href="#book">The book</a><a class="pill mag" href="#writing">Writing</a>
+      </nav>
+    </div>
+    <figure class="geo" id="geoFig" data-cur="Drag">
+      <canvas id="geo" aria-hidden="true"></canvas>
+      <button class="handle" data-v="0" type="button" aria-label="Vertex A. Drag it, or use the arrow keys."></button>
+      <button class="handle" data-v="1" type="button" aria-label="Vertex B. Drag it, or use the arrow keys."></button>
+      <button class="handle" data-v="2" type="button" aria-label="Vertex C. Drag it, or use the arrow keys."></button>
+      <figcaption><span><i>OI</i> = <b id="oiVal">0.000</b></span><span>√(<i>R</i>² − 2<i>Rr</i>) = <b id="eulVal">0.000</b></span><span class="hand">Euler's theorem holds, however you drag it</span></figcaption>
+    </figure>
+  </div>
+</section>
 
-<div class="torn" data-top="#141C33" data-bot="#CFE3EC" data-seed="13"></div>
+<div class="torn"></div>
+
+<section class="band b-paper" id="olympiads" aria-labelledby="oly-h">
+  <div class="wrap">
+    <div class="title-row pop">
+      <h3 class="title" id="oly-h">Olympiads &amp; competitions</h3>
+      <p class="soft" style="max-width:26rem">UKMT, the British Mathematical Olympiad and the AMC series. Rankings are as reported by each competition.</p>
+    </div>
+    <div class="scores pop">
+      <div class="score"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52"/><circle class="arc" cx="60" cy="60" r="52" style="--f:1"/></svg><b>135<small>/135</small></b><span>Intermediate Mathematical Challenge</span></div>
+      <div class="score"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52"/><circle class="arc" cx="60" cy="60" r="52" style="--f:1"/></svg><b>125<small>/125</small></b><span>Senior Mathematical Challenge, 2024 and 2025</span></div>
+      <div class="score"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52"/><circle class="arc" cx="60" cy="60" r="52" style="--f:.7333"/></svg><b>11<small>/15</small></b><span>AIME II 2026, top 8%</span></div>
+      <div class="score count"><b>×6</b><span>UKMT golds, with olympiad qualification</span></div>
+      <div class="score count"><b>×3</b><span>Highest UKMT score in the school</span></div>
+    </div>
+    <ul class="medals pop">
+      <li><i class="disc gold"></i><b>Gold</b><span>UKMT Maclaurin Olympiad, 2025</span><em>Global top 20</em></li>
+      <li><i class="disc silver"></i><b>Silver</b><span>British Mathematical Olympiad Round 1, 2025</span><em>Highest in school, global top 40</em></li>
+      <li><i class="disc merit"></i><b>Merit</b><span>British Mathematical Olympiad Round 2, 2026</span><em>Highest in year, global top 50</em></li>
+      <li><i class="disc bronze"></i><b>Bronze</b><span>Senior ISMTF, 2026</span></li>
+      <li><i class="disc silver"></i><b>Silver</b><span>UKMT Hamilton Olympiad, 2024</span></li>
+      <li><i class="disc bronze"></i><b>Bronze</b><span>UKMT Cayley Olympiad, 2023</span></li>
+      <li><i class="disc gold"></i><b>Gold and Bronze</b><span>UKMT Junior Mathematical Olympiad, 2021 and 2022</span></li>
+      <li><i class="disc merit"></i><b>Distinction</b><span>AMC 12B Honor Roll, 2026</span><em>AIME qualification</em></li>
+    </ul>
+    <details class="more-story all-results" id="all-honours"><summary><i>+</i> Every result, in order</summary>
+      <div class="ledger-grid" id="all-honours">
+      <div class="ledger">
+        <h3>Mathematics</h3>
+        <ul>
+          <li><span class="yr">2026</span><span><b>Merit, British Mathematical Olympiad Round 2</b><span class="n">Highest in year, global top 50</span></span></li>
+          <li><span class="yr">2026</span><span><b>Bronze, Senior ISMTF</b></span></li>
+          <li><span class="yr">2026</span><span><b>AIME II, 11 out of 15</b><span class="n">Top 8%</span></span></li>
+          <li><span class="yr">2026</span><span><b>AMC 12B Honor Roll of Distinction</b><span class="n">AIME qualification</span></span></li>
+          <li><span class="yr">2025</span><span><b>Silver, British Mathematical Olympiad Round 1</b><span class="n">Highest in school, global top 40</span></span></li>
+          <li><span class="yr">2025</span><span><b>Gold, UKMT Maclaurin Olympiad</b><span class="n">Global top 20</span></span></li>
+          <li><span class="yr">2024, 2025</span><span><b>125/125, UKMT Senior Mathematical Challenge</b><span class="n">A perfect score, twice</span></span></li>
+          <li><span class="yr">UKMT</span><span><b>135/135, UKMT Intermediate Mathematical Challenge</b><span class="n">A perfect score</span></span></li>
+          <li><span class="yr">UKMT</span><span><b>Gold six times in UKMT Mathematical Challenges</b><span class="n">With olympiad qualification</span></span></li>
+          <li><span class="yr">UKMT</span><span><b>Highest in school, three times</b></span></li>
+          <li><span class="yr">2024</span><span><b>Silver, UKMT Hamilton Olympiad</b></span></li>
+          <li><span class="yr">2024</span><span><b>Merit, British Mathematical Olympiad Round 1</b></span></li>
+          <li><span class="yr">2023</span><span><b>Bronze, UKMT Cayley Olympiad</b></span></li>
+          <li><span class="yr">2021, 2022</span><span><b>Gold and Bronze, UKMT Junior Mathematical Olympiad</b></span></li>
+          <li><span class="yr">2025</span><span><b>1st place, Y11 Challenge ME</b></span></li>
+          <li><span class="yr">2023, 2025</span><span><b>1st place, Dubai Math Super League</b></span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ledger">
+          <h3>Computer science</h3>
+          <ul>
+            <li><span class="yr">2025</span><span><b>5th of 30 teams, Code Battle</b><span class="n">Representing Dubai College</span></span></li>
+            <li><span class="yr">2025</span><span><b>UAE InnovAIte Hackathon</b><span class="n">Built PlanIt</span></span></li>
+            <li><span class="yr">2024/25</span><span><b>Finals qualifier, American Computer Science League</b></span></li>
+            <li><span class="yr">2023</span><span><b>Overall winner, Dubai College Internal Hackathon</b></span></li>
+          </ul>
+        </div>
+        <div class="ledger">
+          <h3>School and other</h3>
+          <ul>
+            <li><span class="yr">2025</span><span><b>GCSEs: straight 9s</b><span class="n">Pearson Edexcel High Achiever Award; highest mark in the world for GCSE Music</span></span></li>
+            <li><span class="yr">2023</span><span><b>Duke of Edinburgh's International Award, Bronze</b></span></li>
+          </ul>
+        </div>
+      </div>
+    
+    </details>
+  </div>
+</section>
+
+<div class="torn"></div>
 
 <section class="band b-mist" id="epq" aria-labelledby="epq-h">
   <div class="wrap">
@@ -174,7 +261,7 @@
   </div>
 </section>
 
-<div class="torn" data-top="#CFE3EC" data-bot="#F3F1EC" data-seed="21"></div>
+<div class="torn"></div>
 
 <section class="band b-paper" id="pisa" aria-labelledby="pisa-h">
   <div class="wrap">
@@ -217,7 +304,7 @@
   </div>
 </section>
 
-<div class="torn" data-top="#F3F1EC" data-bot="#0C1222" data-seed="34"></div>
+<div class="torn"></div>
 
 <section class="band b-deep" id="xlab" aria-labelledby="xlab-h">
   <div class="wrap">
@@ -257,7 +344,7 @@
   </div>
 </section>
 
-<div class="torn" data-top="#0C1222" data-bot="#141C33" data-seed="41"></div>
+<div class="torn"></div>
 
 <section class="band b-navy" id="book" aria-labelledby="book-h">
   <div class="wrap feat">
@@ -279,7 +366,7 @@
   </div>
 </section>
 
-<div class="torn" data-top="#141C33" data-bot="#F3F1EC" data-seed="55"></div>
+<div class="torn"></div>
 
 <section class="band b-paper" id="writing" aria-labelledby="wr-h">
   <div class="wrap">
@@ -313,13 +400,102 @@
   </div>
 </section>
 
-<div class="torn" data-top="#F3F1EC" data-bot="#141C33" data-seed="62"></div>
+<div class="torn"></div>
 
-<div class="b-navy intro-title" id="projects">
-  <h2 class="big">Things I've <em>built</em></h2>
-</div>
+<section class="band b-wine chapter" id="music" aria-labelledby="music-h">
+  <div class="wrap chapter-grid">
+    <div class="chapter-copy pop">
+      <p class="part">Part two</p>
+      <h2 class="chapter-title" id="music-h">Music</h2>
+      <p class="lede soft">Piano since I was three: a near-perfect 49/50 distinction in the ARSM diploma, the highest GCSE Music mark in the world, competition prizes in four countries, and my own compositions.</p>
+      <nav class="jump" aria-label="Music">
+        <a class="pill mag" href="#piano">Recordings</a><a class="pill mag" href="#awards">Prizes</a><a class="pill mag" href="#compositions">Compositions</a>
+      </nav>
+    </div>
+    <div class="keys-wrap pop">
+      <div class="keys" id="keys" role="group" aria-label="A playable octave, C4 to C5"></div>
+      <p class="hand keys-note">An octave from C4. It plays, so go ahead.</p>
+    </div>
+  </div>
+</section>
 
-<div class="torn" data-top="#141C33" data-bot="#CFE3EC" data-seed="70"></div>
+<div class="torn"></div>
+
+<section class="band b-velvet" id="piano" aria-labelledby="pi-h">
+  <div class="wrap">
+    <div class="feat" style="align-items:end">
+      <div class="feat-copy pop">
+        <span class="tag">Recordings and prizes</span>
+        <h3 class="big" id="pi-h">At the <em>piano</em></h3>
+      </div>
+      <div class="pop">
+        <p class="lede">My ARSM performance diploma earned a near-perfect 49/50, one mark short of the maximum, with full marks for performance as a whole. Distinction starts at 45. I compose in the gaps, and my 2025 GCSE Music mark was the highest in the world.</p>
+        <div class="notes"><div class="note velvet"><b>1st</b><span>Steinway Piano Competition GCC, 2025</span></div><div class="note"><b>49/50</b><span>near-perfect ARSM distinction, 20/20 for performance</span></div></div>
+      </div>
+    </div>
+    <figure class="print prize-print">
+      <button class="zoom" type="button" data-cur="View"><img src="media/prize.webp" width="1588" height="392" loading="lazy" alt="Kevin on stage beside a grand piano, holding a 1st prize winner certificate, with the presenter holding flowers"></button>
+      <figcaption>Receiving a 1st prize on stage</figcaption>
+    </figure>
+    <div class="perf">
+      <figure class="clip big">
+        <video controls preload="none" playsinline poster="media/campanella.webp" src="media/campanella.mp4" width="960" height="540" data-cur="Play"></video>
+        <figcaption><b>Liszt: La Campanella, S. 141 No. 3</b><span>2023, opening 50 seconds</span></figcaption>
+      </figure>
+      <div class="perf-side">
+        <figure class="clip"><video controls preload="none" playsinline poster="media/waldstein-640.webp" src="media/waldstein.mp4" width="960" height="540" data-cur="Play"></video><figcaption><b>Beethoven: "Waldstein" Sonata, I</b><span>2025, opening 50 seconds</span></figcaption></figure>
+        <figure class="clip"><video controls preload="none" playsinline poster="media/gargoyles-640.webp" src="media/gargoyles.mp4" width="960" height="540" data-cur="Play"></video><figcaption><b>Liebermann: Gargoyles, Op. 29 No. 1</b><span>2024, opening 50 seconds</span></figcaption></figure>
+        <figure class="clip"><video controls preload="none" playsinline poster="media/bwv855-640.webp" src="media/bwv855.mp4" width="960" height="540" data-cur="Play"></video><figcaption><b>Bach: Prelude and Fugue in E minor, BWV 855</b><span>2022, opening 50 seconds</span></figcaption></figure>
+      </div>
+    </div>
+    <div class="piano-cols">
+      <div>
+        <h3 id="awards">Competitions</h3>
+        <ul class="prizes">
+          <li><span class="yr">2025</span><span>1st prize, 1st Steinway Piano Competition GCC, Dubai</span></li>
+          <li><span class="yr">2025</span><span>Piano award, Young Musicians of the Gulf (also 2022 and 2023)</span></li>
+          <li><span class="yr">2023</span><span>1st prize, New Talent Festival Competition, London</span></li>
+          <li><span class="yr">2022</span><span>3rd prize, Fujairah International Piano Competition</span></li>
+          <li><span class="yr">2022</span><span>3rd prize, "Merci, Maestro!" International Competition of Young Pianists, Brussels</span></li>
+          <li><span class="yr">2019</span><span>ABRSM ARSM Performance Diploma: a near-perfect 49/50 distinction</span></li>
+        </ul>
+        <div class="report">
+          <a href="certificates/Hu_ABRSM_ARSM_examiner_report.pdf" target="_blank" rel="noopener" data-cur="Read"><img src="media/arsm-report.webp" width="560" height="792" loading="lazy" alt="The handwritten ABRSM ARSM examiner's report for Kaiyang Hu, piano, total mark 49"></a>
+          <div>
+            <blockquote>"A truly outstanding performance today in all ways: musically, technically and with a very fine sense of style."</blockquote>
+            <p class="mono">Examiner, May 2019. Pieces 29/30, performance as a whole 20/20. Total 49/50; distinction is 45 to 50.</p>
+            <p style="margin-top:.5rem"><a href="certificates/Hu_ABRSM_ARSM_examiner_report.pdf" target="_blank" rel="noopener">Read the full report ↗</a></p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 id="compositions">Compositions</h3>
+        <ol class="tracks" id="tracks">
+          <li class="track" data-src="media/piano-concerto-1.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Piano Concerto No. 1" data-cur="Play"></button><div class="t"><b>Piano Concerto No. 1 in D minor: I.</b><span>Piano, violins and cellos</span><div class="tbar"><i></i></div></div><time>0:00</time></li>
+          <li class="track" data-src="media/beethoven-variations.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Variations on Beethoven's Seventh" data-cur="Play"></button><div class="t"><b>Variations on Beethoven's Seventh</b><span>Two pianos</span><div class="tbar"><i></i></div></div><time>0:00</time></li>
+          <li class="track" data-src="media/drift.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Drift" data-cur="Play"></button><div class="t"><b>Drift</b><span>Two pianos, minimalist</span><div class="tbar"><i></i></div></div><time>0:00</time></li>
+          <li class="track" data-src="media/allegro-in-bb.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Allegro in B flat" data-cur="Play"></button><div class="t"><b>Allegro in B♭</b><span>Piano</span><div class="tbar"><i></i></div></div><time>0:00</time></li>
+          <li class="track" data-src="media/impromptu-in-eb.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Impromptu in E flat" data-cur="Play"></button><div class="t"><b>Impromptu in E♭</b><span>Piano</span><div class="tbar"><i></i></div></div><time>0:00</time></li>
+          <li class="track" data-src="media/lullaby-in-ab.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Lullaby in A flat" data-cur="Play"></button><div class="t"><b>Lullaby in A♭</b><span>Piano</span><div class="tbar"><i></i></div></div><time>0:00</time></li>
+          <li class="track" data-src="media/berceuse-in-d.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Berceuse in D major" data-cur="Play"></button><div class="t"><b>Berceuse in D major</b><span>Piano</span><div class="tbar"><i></i></div></div><time>0:00</time></li>
+        </ol>
+        <p class="soft" style="font-size:.82rem;margin-top:1rem">Rendered from my scores with the Salamander Grand Piano samples by Alexander Holm (CC BY 3.0).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="torn"></div>
+
+<section class="band b-navy chapter small" id="projects" aria-labelledby="proj-h">
+  <div class="wrap">
+    <p class="part">Also</p>
+    <h2 class="chapter-title" id="proj-h" style="font-size:clamp(2.8rem,7vw,5.6rem)">Projects</h2>
+    <p class="lede soft">Software I've written, mostly for people learning maths, plus one for pianists that sits between my two subjects.</p>
+  </div>
+</section>
+
+<div class="torn"></div>
 
 <section class="band b-mist" id="kevinvariant" aria-labelledby="kv-h">
   <div class="wrap">
@@ -349,7 +525,7 @@
   </div>
 </section>
 
-<div class="torn" data-top="#CFE3EC" data-bot="#F3F1EC" data-seed="77"></div>
+<div class="torn"></div>
 
 <section class="band b-paper" id="cevian" aria-labelledby="cev-h">
   <div class="wrap feat flip">
@@ -371,7 +547,7 @@
   </div>
 </section>
 
-<div class="torn" data-top="#F3F1EC" data-bot="#141C33" data-seed="83"></div>
+<div class="torn"></div>
 
 <section class="band b-navy" id="fingerflow" aria-labelledby="ff-h">
   <div class="wrap feat">
@@ -392,11 +568,11 @@
   </div>
 </section>
 
-<div class="torn" data-top="#141C33" data-bot="#0C1222" data-seed="89"></div>
+<div class="torn"></div>
 
 <section class="band b-deep" id="more-projects" aria-labelledby="more-h">
   <div class="wrap">
-    <h3 class="big centre" id="more-h" style="font-size:clamp(2.4rem,5.6vw,4.6rem)">More projects <em>&amp; side quests</em></h3>
+    <h3 class="big centre" id="more-h" style="font-size:clamp(2.4rem,5.6vw,4.6rem)">Smaller projects <em>&amp; experiments</em></h3>
     <div class="cards">
       <div class="card"><span class="k">A-level NEA</span><h3>Way2Class</h3><p>Campus navigation that routes around busy corridors, using A* with vector pruning, a 3NF database and simulated live congestion.</p></div>
       <div class="card"><span class="k">Probability</span><h3>Crowds as Markov chains</h3><p>Pedestrians as a Markov chain on a graph of the school, with one parameter moving them from random to purposeful walks.</p></div>
@@ -408,140 +584,7 @@
   </div>
 </section>
 
-<div class="torn" data-top="#0C1222" data-bot="#F3F1EC" data-seed="97"></div>
-
-<section class="b-paper" id="honours" aria-labelledby="hon-h">
-  <div class="wrap" style="padding-top:clamp(3rem,7vw,5rem)">
-    <h2 class="big" id="hon-h" style="color:var(--navy)">Honours <em>&amp; olympiads</em></h2>
-  </div>
-  <div class="cabinet" id="cabinet" aria-label="Highlights in a trophy cabinet">
-    <canvas id="cabScene" aria-hidden="true"></canvas>
-    <div class="cab-copy cab-swap" id="cabCopy" aria-live="polite">
-      <p class="cat"><span id="cabCat">Maths</span><span id="cabNum">01 / 10</span></p>
-      <p class="stat" id="cabStat">Gold ×6</p>
-      <h3 id="cabTitle">UKMT Mathematical Challenges</h3>
-      <p id="cabDesc">Gold six times, with olympiad qualification.</p>
-      <span class="tag" id="cabTag">UKMT</span>
-    </div>
-    <div class="cab-dots"><span class="mono">Scroll along the shelves</span><div id="cabDots"></div></div>
-  </div>
-  <div class="wrap" style="padding-bottom:clamp(4rem,8vw,6rem)">
-    <div class="cab-fallback" id="cabFallback"></div>
-    <div class="ledger-grid">
-      <div class="ledger">
-        <h3>Mathematics</h3>
-        <ul>
-          <li><span class="yr">2026</span><span><b>Merit, British Mathematical Olympiad Round 2</b><span class="n">Highest in year, global top 50</span></span></li>
-          <li><span class="yr">2026</span><span><b>Bronze, Senior ISMTF</b></span></li>
-          <li><span class="yr">2026</span><span><b>AIME II, 11 out of 15</b><span class="n">Top 8%</span></span></li>
-          <li><span class="yr">2026</span><span><b>AMC 12B Honor Roll of Distinction</b><span class="n">AIME qualification</span></span></li>
-          <li><span class="yr">2025</span><span><b>Silver, British Mathematical Olympiad Round 1</b><span class="n">Highest in school, global top 40</span></span></li>
-          <li><span class="yr">2025</span><span><b>Gold, UKMT Maclaurin Olympiad</b><span class="n">Global top 20</span></span></li>
-          <li><span class="yr">2024, 2025</span><span><b>125/125, UKMT Senior Mathematical Challenge</b><span class="n">A perfect score, twice</span></span></li>
-          <li><span class="yr">UKMT</span><span><b>135/135, UKMT Intermediate Mathematical Challenge</b><span class="n">A perfect score</span></span></li>
-          <li><span class="yr">UKMT</span><span><b>Gold six times in UKMT Mathematical Challenges</b><span class="n">With olympiad qualification</span></span></li>
-          <li><span class="yr">UKMT</span><span><b>Highest in school, three times</b></span></li>
-          <li><span class="yr">2024</span><span><b>Silver, UKMT Hamilton Olympiad</b></span></li>
-          <li><span class="yr">2024</span><span><b>Merit, British Mathematical Olympiad Round 1</b></span></li>
-          <li><span class="yr">2023</span><span><b>Bronze, UKMT Cayley Olympiad</b></span></li>
-          <li><span class="yr">2021, 2022</span><span><b>Gold and Bronze, UKMT Junior Mathematical Olympiad</b></span></li>
-          <li><span class="yr">2025</span><span><b>1st place, Y11 Challenge ME</b></span></li>
-          <li><span class="yr">2023, 2025</span><span><b>1st place, Dubai Math Super League</b></span></li>
-        </ul>
-      </div>
-      <div>
-        <div class="ledger">
-          <h3>Computer science</h3>
-          <ul>
-            <li><span class="yr">2025</span><span><b>5th of 30 teams, Code Battle</b><span class="n">Representing Dubai College</span></span></li>
-            <li><span class="yr">2025</span><span><b>UAE InnovAIte Hackathon</b><span class="n">Built PlanIt</span></span></li>
-            <li><span class="yr">2024/25</span><span><b>Finals qualifier, American Computer Science League</b></span></li>
-            <li><span class="yr">2023</span><span><b>Overall winner, Dubai College Internal Hackathon</b></span></li>
-          </ul>
-        </div>
-        <div class="ledger">
-          <h3>School and other</h3>
-          <ul>
-            <li><span class="yr">2025</span><span><b>GCSEs: straight 9s</b><span class="n">Pearson Edexcel High Achiever Award; highest mark in the world for GCSE Music</span></span></li>
-            <li><span class="yr">2023</span><span><b>Duke of Edinburgh's International Award, Bronze</b></span></li>
-          </ul>
-        </div>
-        <div class="ledger">
-          <h3>Piano</h3>
-          <p class="soft">Competition prizes and the ARSM diploma are with my <a href="#piano">recordings</a>.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="torn" data-top="#F3F1EC" data-bot="#761226" data-seed="104"></div>
-
-<section class="band b-velvet" id="piano" aria-labelledby="pi-h">
-  <div class="wrap">
-    <div class="feat" style="align-items:end">
-      <div class="feat-copy pop">
-        <span class="tag">Since age three</span>
-        <h2 class="big" id="pi-h">At the <em>piano</em></h2>
-      </div>
-      <div class="pop">
-        <p class="lede">I compose in the gaps. My ARSM performance diploma came with distinction at 49/50, and my 2025 GCSE Music mark was the highest in the world.</p>
-        <div class="notes"><div class="note velvet"><b>1st</b><span>Steinway Piano Competition GCC, 2025</span></div><div class="note"><b>49/50</b><span>ABRSM ARSM diploma, 2019</span></div></div>
-      </div>
-    </div>
-    <figure class="print prize-print">
-      <button class="zoom" type="button" data-cur="View"><img src="media/prize.webp" width="1588" height="392" loading="lazy" alt="Kevin on stage beside a grand piano, holding a 1st prize winner certificate, with the presenter holding flowers"></button>
-      <figcaption>Receiving a 1st prize on stage</figcaption>
-    </figure>
-    <div class="perf">
-      <figure class="clip big">
-        <video controls preload="none" playsinline poster="media/campanella.webp" src="media/campanella.mp4" width="960" height="540" data-cur="Play"></video>
-        <figcaption><b>Liszt: La Campanella, S. 141 No. 3</b><span>2023, opening 50 seconds</span></figcaption>
-      </figure>
-      <div class="perf-side">
-        <figure class="clip"><video controls preload="none" playsinline poster="media/waldstein-640.webp" src="media/waldstein.mp4" width="960" height="540" data-cur="Play"></video><figcaption><b>Beethoven: "Waldstein" Sonata, I</b><span>2025, opening 50 seconds</span></figcaption></figure>
-        <figure class="clip"><video controls preload="none" playsinline poster="media/gargoyles-640.webp" src="media/gargoyles.mp4" width="960" height="540" data-cur="Play"></video><figcaption><b>Liebermann: Gargoyles, Op. 29 No. 1</b><span>2024, opening 50 seconds</span></figcaption></figure>
-        <figure class="clip"><video controls preload="none" playsinline poster="media/bwv855-640.webp" src="media/bwv855.mp4" width="960" height="540" data-cur="Play"></video><figcaption><b>Bach: Prelude and Fugue in E minor, BWV 855</b><span>2022, opening 50 seconds</span></figcaption></figure>
-      </div>
-    </div>
-    <div class="piano-cols">
-      <div>
-        <h3>Competitions</h3>
-        <ul class="prizes">
-          <li><span class="yr">2025</span><span>1st prize, 1st Steinway Piano Competition GCC, Dubai</span></li>
-          <li><span class="yr">2025</span><span>Piano award, Young Musicians of the Gulf (also 2022 and 2023)</span></li>
-          <li><span class="yr">2023</span><span>1st prize, New Talent Festival Competition, London</span></li>
-          <li><span class="yr">2022</span><span>3rd prize, Fujairah International Piano Competition</span></li>
-          <li><span class="yr">2022</span><span>3rd prize, "Merci, Maestro!" International Competition of Young Pianists, Brussels</span></li>
-          <li><span class="yr">2019</span><span>ABRSM ARSM Performance Diploma, distinction, 49 out of 50</span></li>
-        </ul>
-        <div class="report">
-          <a href="certificates/Hu_ABRSM_ARSM_examiner_report.pdf" target="_blank" rel="noopener" data-cur="Read"><img src="media/arsm-report.webp" width="560" height="792" loading="lazy" alt="The handwritten ABRSM ARSM examiner's report for Kaiyang Hu, piano, total mark 49"></a>
-          <div>
-            <blockquote>"A truly outstanding performance today in all ways: musically, technically and with a very fine sense of style."</blockquote>
-            <p class="mono">Examiner, May 2019. Pieces 29/30, performance 20/20.</p>
-            <p style="margin-top:.5rem"><a href="certificates/Hu_ABRSM_ARSM_examiner_report.pdf" target="_blank" rel="noopener">Read the full report ↗</a></p>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h3>Compositions</h3>
-        <ol class="tracks" id="tracks">
-          <li class="track" data-src="media/piano-concerto-1.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Piano Concerto No. 1" data-cur="Play"></button><div class="t"><b>Piano Concerto No. 1 in D minor: I.</b><span>Piano, violins and cellos</span><div class="tbar"><i></i></div></div><time>0:00</time></li>
-          <li class="track" data-src="media/beethoven-variations.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Variations on Beethoven's Seventh" data-cur="Play"></button><div class="t"><b>Variations on Beethoven's Seventh</b><span>Two pianos</span><div class="tbar"><i></i></div></div><time>0:00</time></li>
-          <li class="track" data-src="media/drift.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Drift" data-cur="Play"></button><div class="t"><b>Drift</b><span>Two pianos, minimalist</span><div class="tbar"><i></i></div></div><time>0:00</time></li>
-          <li class="track" data-src="media/allegro-in-bb.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Allegro in B flat" data-cur="Play"></button><div class="t"><b>Allegro in B♭</b><span>Piano</span><div class="tbar"><i></i></div></div><time>0:00</time></li>
-          <li class="track" data-src="media/impromptu-in-eb.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Impromptu in E flat" data-cur="Play"></button><div class="t"><b>Impromptu in E♭</b><span>Piano</span><div class="tbar"><i></i></div></div><time>0:00</time></li>
-          <li class="track" data-src="media/lullaby-in-ab.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Lullaby in A flat" data-cur="Play"></button><div class="t"><b>Lullaby in A♭</b><span>Piano</span><div class="tbar"><i></i></div></div><time>0:00</time></li>
-          <li class="track" data-src="media/berceuse-in-d.mp3"><button class="play" type="button" aria-pressed="false" aria-label="Play Berceuse in D major" data-cur="Play"></button><div class="t"><b>Berceuse in D major</b><span>Piano</span><div class="tbar"><i></i></div></div><time>0:00</time></li>
-        </ol>
-        <p class="soft" style="font-size:.82rem;margin-top:1rem">Rendered from my scores with the Salamander Grand Piano samples by Alexander Holm (CC BY 3.0).</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="torn" data-top="#761226" data-bot="#F3F1EC" data-seed="111"></div>
+<div class="torn"></div>
 
 <section class="band b-paper" id="courses" aria-label="Courses, certificates and leadership">
   <div class="wrap two">
@@ -572,7 +615,7 @@
   </div>
 </section>
 
-<div class="torn" data-top="#F3F1EC" data-bot="#0C1222" data-seed="118"></div>
+<div class="torn"></div>
 
 <footer class="band b-deep contact" id="contact" aria-labelledby="ct-h">
   <div class="wrap">

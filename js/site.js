@@ -5,20 +5,6 @@
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
   const root = document.documentElement;
 
-  /* ---------- honours shown in the 3D cabinet (shared with scenes.js) ---------- */
-  window.CABINET = [
-    { cat: 'Maths', stat: 'Gold ×6', title: 'UKMT Mathematical Challenges', desc: 'Gold six times, with olympiad qualification. Highest in school three times.', tag: 'UKMT', obj: 'medals' },
-    { cat: 'Maths', stat: '135/135', title: 'Intermediate Mathematical Challenge', desc: 'A perfect score.', tag: 'UKMT', obj: 'plaque', text: '135/135', sub: 'INTERMEDIATE MATHS CHALLENGE' },
-    { cat: 'Maths', stat: '125/125 ×2', title: 'Senior Mathematical Challenge', desc: 'Perfect scores in 2024 and 2025.', tag: 'UKMT, 2024 and 2025', obj: 'plaque', text: '125/125', sub: 'SENIOR MATHS CHALLENGE ×2' },
-    { cat: 'Maths', stat: 'Gold', title: 'UKMT Maclaurin Olympiad', desc: 'Global top 20.', tag: '2025', obj: 'medal', metal: 'gold', text: 'M' },
-    { cat: 'Maths', stat: 'Silver', title: 'British Mathematical Olympiad, Round 1', desc: 'Highest in school, global top 40.', tag: '2025', obj: 'medal', metal: 'silver', text: 'BMO' },
-    { cat: 'Maths', stat: 'Merit', title: 'British Mathematical Olympiad, Round 2', desc: 'Highest in year, global top 50.', tag: '2026', obj: 'frame', text: 'Merit', sub: 'BMO ROUND 2' },
-    { cat: 'Maths', stat: '11/15', title: 'AIME II', desc: 'Top 8%, after the AMC 12B Honor Roll of Distinction.', tag: '2026', obj: 'plaque', text: '11/15', sub: 'AIME II' },
-    { cat: 'Maths', stat: 'Top ×3', title: 'Highest in school', desc: 'The school\'s top UKMT score three times.', tag: 'Dubai College', obj: 'trophy', text: '×3' },
-    { cat: 'Piano', stat: '1st', title: 'Steinway Piano Competition GCC', desc: '1st prize at the first edition, in Dubai.', tag: '2025', obj: 'trophy', text: '1st' },
-    { cat: 'Piano', stat: '49/50', title: 'ABRSM ARSM Performance Diploma', desc: 'Distinction: pieces 29/30, performance 20/20.', tag: '2019', obj: 'frame', text: '49/50', sub: 'ARSM, DISTINCTION' }
-  ];
-
   /* ---------- smooth scroll ---------- */
   let lenis = null;
   const G = window.gsap, ST = window.ScrollTrigger;
@@ -44,8 +30,8 @@
   /* ---------- torn paper edges ---------- */
   const rnd = seed => () => (seed = (seed * 16807) % 2147483647) / 2147483647;
   function drawTorn(el) {
-    const w = Math.max(320, el.clientWidth), h = el.clientHeight || 80, r = rnd(+el.dataset.seed * 997 + 13);
-    const top = el.dataset.top, bot = el.dataset.bot, mid = h * (.35 + r() * .25), tilt = (r() - .5) * h * .5;
+    const w = Math.max(320, el.clientWidth), h = el.clientHeight || 80, r = rnd((+el.dataset.seed || (torns.indexOf(el) + 1) * 7) * 997 + 13);
+    const bg = n => n ? getComputedStyle(n).backgroundColor : '#141C33'; const top = el.dataset.top || bg(el.previousElementSibling), bot = el.dataset.bot || bg(el.nextElementSibling), mid = h * (.35 + r() * .25), tilt = (r() - .5) * h * .5;
     const pts = []; let x = 0;
     while (x <= w + 8) { const t = x / w; pts.push([x, mid + tilt * (t - .5) + (r() - .5) * h * .22 + Math.sin(t * 9 + r()) * h * .05]); x += 4 + r() * 10; }
     const line = pts.map(p => p.map(v => v.toFixed(1)).join(',')).join(' ');
@@ -85,7 +71,7 @@
 
   /* ---------- nav: scroll-spy with a sliding highlight ---------- */
   const seg = $('.seg'), blob = $('.seg .blob'), spyLinks = $$('.seg a');
-  const spyTargets = { research: ['#research', '#epq', '#pisa', '#xlab'], book: ['#book', '#writing'], projects: ['#projects', '#kevinvariant', '#cevian', '#fingerflow', '#more-projects'], honours: ['#honours'], piano: ['#piano'] };
+  const spyTargets = { about: ['#about'], maths: ['#maths', '#olympiads', '#epq', '#pisa', '#xlab', '#book', '#writing'], music: ['#music', '#piano'], projects: ['#projects', '#kevinvariant', '#cevian', '#fingerflow', '#more-projects'] };
   const setActive = key => {
     spyLinks.forEach(a => a.classList.toggle('on', a.dataset.spy === key));
     const a = spyLinks.find(l => l.dataset.spy === key);
@@ -275,10 +261,71 @@
     update();
   })();
 
-  /* ---------- cabinet fallback (no WebGL, reduced motion) ---------- */
-  window.cabinetFallback = () => {
-    root.classList.add('no-cabinet');
-    $('#cabFallback').innerHTML = window.CABINET.map(c => `<div class="note" style="max-width:none;--r:0deg"><span class="mono" style="color:var(--velvet)">${c.cat}</span><b>${c.stat}</b><span><strong>${c.title}</strong><br>${c.desc}</span></div>`).join('');
-  };
-  if (reduce) window.cabinetFallback();
+
+  /* ---------- Mathematics opener: a live triangle with its circumcircle, incircle, nine-point circle and Euler line ---------- */
+  (() => {
+    const fig = $('#geoFig'); if (!fig) return;
+    const cv = $('#geo'), ctx = cv.getContext('2d'), handles = $$('.handle', fig);
+    let W = 0, H = 0, dpr = 1, frac = [[.42, .08], [.92, .68], [.1, .74]];
+    const sub = (p, q) => [p[0] - q[0], p[1] - q[1]], len = v => Math.hypot(v[0], v[1]);
+    const cc = (A, B, C) => { const d = 2 * (A[0] * (B[1] - C[1]) + B[0] * (C[1] - A[1]) + C[0] * (A[1] - B[1])), a2 = A[0] ** 2 + A[1] ** 2, b2 = B[0] ** 2 + B[1] ** 2, c2 = C[0] ** 2 + C[1] ** 2;
+      return [(a2 * (B[1] - C[1]) + b2 * (C[1] - A[1]) + c2 * (A[1] - B[1])) / d, (a2 * (C[0] - B[0]) + b2 * (A[0] - C[0]) + c2 * (B[0] - A[0])) / d]; };
+    function draw() {
+      if (!W) return;
+      const [A, B, C] = frac.map(([x, y]) => [x * W, y * H]);
+      handles.forEach((h, i) => { h.style.left = [A, B, C][i][0] + 'px'; h.style.top = [A, B, C][i][1] + 'px'; });
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
+      const a = len(sub(B, C)), b = len(sub(C, A)), c = len(sub(A, B)), area = Math.abs((B[0] - A[0]) * (C[1] - A[1]) - (C[0] - A[0]) * (B[1] - A[1])) / 2;
+      if (area < 40) return;
+      const s2 = a + b + c, r = 2 * area / s2, R = a * b * c / (4 * area), I = [(a * A[0] + b * B[0] + c * C[0]) / s2, (a * A[1] + b * B[1] + c * C[1]) / s2];
+      const O = cc(A, B, C), Hc = [A[0] + B[0] + C[0] - 2 * O[0], A[1] + B[1] + C[1] - 2 * O[1]], N = [(O[0] + Hc[0]) / 2, (O[1] + Hc[1]) / 2];
+      const circ = (P, rad, col, w, dash) => { ctx.beginPath(); ctx.setLineDash(dash || []); ctx.strokeStyle = col; ctx.lineWidth = w; ctx.arc(P[0], P[1], rad, 0, 7); ctx.stroke(); ctx.setLineDash([]); };
+      const seg = (P, Q, col, w, dash) => { ctx.beginPath(); ctx.setLineDash(dash || []); ctx.strokeStyle = col; ctx.lineWidth = w; ctx.moveTo(P[0], P[1]); ctx.lineTo(Q[0], Q[1]); ctx.stroke(); ctx.setLineDash([]); };
+      const dot = (P, col, rad = 3.2) => { ctx.beginPath(); ctx.fillStyle = col; ctx.arc(P[0], P[1], rad, 0, 7); ctx.fill(); };
+      circ(O, R, '#C9A54A', 1.4); circ(N, R / 2, '#6CC4DC', 1, [3, 6]);
+      const e = sub(Hc, O), el = len(e) || 1, far = Math.hypot(W, H);
+      seg([O[0] - e[0] / el * far, O[1] - e[1] / el * far], [O[0] + e[0] / el * far, O[1] + e[1] / el * far], '#6CC4DC', .9, [2, 7]);
+      seg(A, B, '#F3F1EC', 1.6); seg(B, C, '#F3F1EC', 1.6); seg(C, A, '#F3F1EC', 1.6);
+      circ(I, r, '#EE9AAA', 1.8); seg(O, I, '#EE9AAA', 2.4); dot(O, '#C9A54A'); dot(I, '#EE9AAA'); dot(N, '#6CC4DC', 2.4);
+      ctx.font = 'italic 17px "STIX Two Text", serif'; ctx.fillStyle = '#F3F1EC';
+      const g = [(A[0] + B[0] + C[0]) / 3, (A[1] + B[1] + C[1]) / 3];
+      [[A, 'A'], [B, 'B'], [C, 'C']].forEach(([P, n]) => { const v = sub(P, g), L = len(v) || 1; ctx.fillText(n, P[0] + v[0] / L * 24 - 5, P[1] + v[1] / L * 24 + 6); });
+      ctx.fillText('O', O[0] + 7, O[1] - 7); ctx.fillText('I', I[0] + 7, I[1] - 7);
+      const unit = Math.min(W, H) / 5;
+      $('#oiVal').textContent = (len(sub(O, I)) / unit).toFixed(3);
+      $('#eulVal').textContent = (Math.sqrt(Math.max(R * R - 2 * R * r, 0)) / unit).toFixed(3);
+    }
+    const size = () => { dpr = Math.min(devicePixelRatio || 1, 2); const r = cv.getBoundingClientRect(); W = r.width; H = r.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); draw(); };
+    new ResizeObserver(size).observe(cv); if (document.fonts) document.fonts.ready.then(draw);
+    const cl = v => Math.min(.97, Math.max(.03, v));
+    handles.forEach((h, i) => {
+      h.addEventListener('pointerdown', e => { e.preventDefault(); h.setPointerCapture(e.pointerId); h.classList.add('drag'); });
+      h.addEventListener('pointermove', e => { if (!h.hasPointerCapture(e.pointerId)) return; const r = cv.getBoundingClientRect(); frac[i] = [cl((e.clientX - r.left) / W), cl((e.clientY - r.top) / H)]; draw(); });
+      const end = e => { h.classList.remove('drag'); if (h.hasPointerCapture(e.pointerId)) h.releasePointerCapture(e.pointerId); };
+      h.addEventListener('pointerup', end); h.addEventListener('pointercancel', end);
+      h.addEventListener('keydown', e => { const st = e.shiftKey ? .05 : .015, m = { ArrowLeft: [-st, 0], ArrowRight: [st, 0], ArrowUp: [0, -st], ArrowDown: [0, st] }[e.key]; if (!m) return; e.preventDefault(); frac[i] = [cl(frac[i][0] + m[0]), cl(frac[i][1] + m[1])]; draw(); });
+    });
+  })();
+
+  /* ---------- Music opener: a playable octave (Web Audio, no samples) ---------- */
+  (() => {
+    const box = $('#keys'); if (!box) return;
+    const notes = [['C4', 0, 'a'], ['C♯4', 1, 'w'], ['D4', 2, 's'], ['E♭4', 3, 'e'], ['E4', 4, 'd'], ['F4', 5, 'f'], ['F♯4', 6, 't'], ['G4', 7, 'g'], ['A♭4', 8, 'y'], ['A4', 9, 'h'], ['B♭4', 10, 'u'], ['B4', 11, 'j'], ['C5', 12, 'k']];
+    let ac = null;
+    const play = semis => {
+      ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+      const f = 261.6256 * Math.pow(2, semis / 12), t = ac.currentTime, out = ac.createGain();
+      out.gain.setValueAtTime(0, t); out.gain.linearRampToValueAtTime(.32, t + .008); out.gain.exponentialRampToValueAtTime(.12, t + .25); out.gain.exponentialRampToValueAtTime(.0008, t + 2.2);
+      const lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.setValueAtTime(f * 8, t); lp.frequency.exponentialRampToValueAtTime(f * 2, t + 1.2);
+      [[1, 1], [2, .35], [3, .14], [4, .06]].forEach(([h, a]) => { const o = ac.createOscillator(), g = ac.createGain(); o.type = h === 1 ? 'triangle' : 'sine'; o.frequency.value = f * h; g.gain.value = a; o.connect(g).connect(lp); o.start(t); o.stop(t + 2.3); });
+      lp.connect(out).connect(ac.destination);
+    };
+    box.innerHTML = notes.map(([n, s]) => `<button type="button" class="key ${n.length > 2 ? 'black' : 'white'}" data-s="${s}" aria-label="${n}">${n.length > 2 ? '' : `<span>${n}</span>`}</button>`).join('');
+    const press = b => { play(+b.dataset.s); b.classList.add('down'); setTimeout(() => b.classList.remove('down'), 180); };
+    $$('.key', box).forEach(b => {
+      b.addEventListener('pointerdown', e => { e.preventDefault(); press(b); });
+      b.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); press(b); } });
+    });
+    box.addEventListener('keydown', e => { const n = notes.find(x => x[2] === e.key.toLowerCase()); if (n) press($(`.key[data-s="${n[1]}"]`, box)); });
+  })();
 })();
