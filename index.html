@@ -268,6 +268,11 @@ h4 { font-size: 1rem; font-weight: 600; }
 .prize img { width: 100%; height: auto; aspect-ratio: 1588 / 392; object-fit: cover; object-position: 40% 30%; }
 .prize figcaption { font-size: .9rem; color: var(--on-velvet-soft); }
 @media (max-width: 640px) { .prize img { aspect-ratio: 16 / 9; } }
+.report { margin-top: clamp(3rem, 6vw, 4rem); display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 1.5rem clamp(1.5rem, 4vw, 3rem); align-items: center; }
+.report img { width: 100%; height: auto; box-shadow: 0 18px 40px -20px rgba(0, 0, 0, .6); }
+.report blockquote { margin: 0; font-family: var(--display); font-style: italic; font-size: clamp(1.3rem, 2.4vw, 1.9rem); line-height: 1.35; }
+.report .marks { font-family: var(--math); font-variant-numeric: tabular-nums; color: var(--on-velvet-soft); margin-top: .9rem; }
+@media (max-width: 640px) { .report { grid-template-columns: minmax(0, 1fr); } .report a.thumb { max-width: 200px; } }
 .perf { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 2rem clamp(1.25rem, 3vw, 2.5rem); align-items: start; }
 .perf-main { display: grid; gap: clamp(2rem, 4vw, 3rem); align-content: start; }
 .perf-side { display: grid; gap: 1.25rem; align-content: start; }
@@ -657,7 +662,7 @@ h4 { font-size: 1rem; font-weight: 600; }
     <div class="music-intro">
       <h2 class="title" id="mu-h">At the piano</h2>
       <div class="prose">
-        <p>I've played for thirteen years and compose in the gaps. I took the ABRSM ARSM performance diploma with distinction (49/50) in 2018, and my 2025 GCSE Music mark was the highest in the world.</p>
+        <p>I've played for thirteen years and compose in the gaps. I took the ABRSM ARSM performance diploma with distinction (49/50) in 2019, and my 2025 GCSE Music mark was the highest in the world.</p>
       </div>
     </div>
 
@@ -680,7 +685,7 @@ h4 { font-size: 1rem; font-weight: 600; }
             <li><span class="yr">2023</span><span>1st prize, New Talent Festival Competition, London</span></li>
             <li><span class="yr">2022</span><span>3rd prize, Fujairah International Piano Competition</span></li>
             <li><span class="yr">2022</span><span>3rd prize, "Merci, Maestro!" International Competition of Young Pianists, Brussels</span></li>
-            <li><span class="yr">2018</span><span>ABRSM ARSM Performance Diploma, distinction</span></li>
+            <li><span class="yr">2019</span><span>ABRSM ARSM Performance Diploma, distinction, 49 out of 50</span></li>
           </ul>
         </div>
       </div>
@@ -697,6 +702,16 @@ h4 { font-size: 1rem; font-weight: 600; }
           <video controls preload="none" playsinline poster="media/bwv855-640.webp" src="media/bwv855.mp4" width="960" height="540"></video>
           <figcaption><b>Bach: Prelude and Fugue in E minor, BWV 855</b><span class="soft">2022, opening 50 seconds</span></figcaption>
         </figure>
+      </div>
+    </div>
+
+    <div class="report">
+      <a class="thumb" href="certificates/Hu_ABRSM_ARSM_examiner_report.pdf" target="_blank" rel="noopener"><img src="media/arsm-report.webp" width="560" height="792" loading="lazy" alt="The handwritten ABRSM ARSM examiner's report for Kaiyang Hu, piano, total mark 49"></a>
+      <div>
+        <p class="label" style="color:var(--on-velvet-soft)">ABRSM ARSM diploma, examiner's report, May 2019</p>
+        <blockquote>"A truly outstanding performance today in all ways: musically, technically and with a very fine sense of style."</blockquote>
+        <p class="marks">Pieces 29/30, performance as a whole 20/20, total 49/50. Scarlatti, Mozart and Chopin.</p>
+        <p class="links" style="margin-top:.9rem"><a href="certificates/Hu_ABRSM_ARSM_examiner_report.pdf" target="_blank" rel="noopener">Read the full report (PDF)</a></p>
       </div>
     </div>
 
