@@ -463,8 +463,9 @@ dialog.viewer button { position: absolute; top: .5rem; right: .5rem; }
 .chapters span { padding: .45rem .85rem; border-radius: 999px; border: 1px solid rgba(243,241,236,.35); font-size: .85rem; color: var(--on-dark-soft); }
 .chapters span:nth-child(4) { background: var(--gold); border-color: var(--gold); color: var(--navy); font-weight: 600; }
 .plates-title { margin-top: clamp(2.5rem, 5vw, 3.5rem); font-family: var(--display); font-style: italic; font-size: clamp(1.6rem, 3vw, 2.2rem); text-align: center; color: var(--paper); }
-.plates { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1.2rem, 2.5vw, 2rem); margin-top: 2rem; align-items: start; }
-.plate img { aspect-ratio: auto; background: #fff; }
-.plate:nth-child(3) { grid-column: span 1; }
-@media (max-width: 1000px) { .plates { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 480px) { .plates { grid-template-columns: minmax(0, 1fr); } }
+.plates { display: grid; grid-template-columns: repeat(4, minmax(0, 190px)); justify-content: center; gap: clamp(1rem, 2vw, 1.6rem); margin-top: 1.6rem; align-items: start; }
+.plate { padding: .45rem .45rem 2rem; }
+.plate img { aspect-ratio: auto; background: #fff; max-height: 170px; width: 100%; object-fit: contain; }
+.plate figcaption { font-size: .6rem; left: .55rem; right: .55rem; bottom: .5rem; }
+.plate::before { width: 56px; height: 18px; top: -9px; }
+@media (max-width: 900px) { .plates { grid-template-columns: repeat(2, minmax(0, 170px)); } }
