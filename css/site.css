@@ -477,9 +477,3 @@ dialog.viewer button { position: absolute; top: .5rem; right: .5rem; }
 dialog.viewer img { background: #fff; padding: 1rem; }
 
 .pascal { width: 100%; height: auto; }
-
-/* falling notes */
-.roll { margin: 0 0 1.2rem; display: grid; gap: .45rem; }
-.roll canvas { width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; background: linear-gradient(#1a0a10, #2a0f18); box-shadow: inset 0 0 0 1px rgba(243,241,236,.08); }
-.roll figcaption { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: .8rem; color: #E7C9CF; }
-.roll figcaption span:first-child { font-family: var(--display); font-size: 1rem; color: var(--on-dark); }
