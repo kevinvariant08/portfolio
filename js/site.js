@@ -338,4 +338,58 @@
       t.addEventListener('keydown', e => { const d = { ArrowRight: 1, ArrowLeft: -1 }[e.key]; if (!d) return; e.preventDefault(); const n = tabs[(i + d + tabs.length) % tabs.length]; select(n); n.focus(); });
     });
   })();
+
+  /* ---------- falling notes for the composition that is playing ---------- */
+  (() => {
+    const cv = $('#roll'); if (!cv) return;
+    const g = cv.getContext('2d'), cache = {}, LOOK = 2.6, LO = 21, HI = 108;
+    const isBlack = p => [1, 3, 6, 8, 10].includes(p % 12);
+    const whites = []; for (let p = LO; p <= HI; p++) if (!isBlack(p)) whites.push(p);
+    let notes = [], name = null, W = 0, H = 0, raf = 0, idx = 0;
+    const keyX = p => { // left edge and width of key p, in white-key units
+      if (!isBlack(p)) return [whites.indexOf(p), 1];
+      return [whites.indexOf(p - 1) + .68, .64];
+    };
+    const size = () => { const d = Math.min(devicePixelRatio || 1, 2), r = cv.getBoundingClientRect(); W = r.width; H = r.height; cv.width = Math.round(W * d); cv.height = Math.round(H * d); g.setTransform(d, 0, 0, d, 0, 0); draw(); };
+    function draw() {
+      if (!W) return;
+      const t = (current && current.dataset.src.includes(name)) ? audio.currentTime : 0;
+      const kbH = Math.max(28, H * .16), rollH = H - kbH, u = W / whites.length, pps = rollH / LOOK;
+      g.clearRect(0, 0, W, H);
+      // guide lines at each C
+      g.strokeStyle = 'rgba(243,241,236,.06)'; g.lineWidth = 1;
+      for (let p = 24; p <= HI; p += 12) { const x = keyX(p)[0] * u; g.beginPath(); g.moveTo(x, 0); g.lineTo(x, rollH); g.stroke(); }
+      // notes in view
+      while (idx > 0 && notes[idx - 1] && notes[idx - 1][0] + notes[idx - 1][1] > t - 1) idx--;
+      while (idx < notes.length && notes[idx][0] + notes[idx][1] < t - .5) idx++;
+      const down = new Set();
+      for (let i = idx; i < notes.length; i++) {
+        const [st, du, p] = notes[i]; if (st > t + LOOK) break;
+        if (st + du < t) continue;
+        if (st <= t) down.add(p);
+        const [kx, kw] = keyX(p), x = kx * u + 1, w = kw * u - 2, y1 = rollH - (st - t) * pps, y0 = rollH - (st + du - t) * pps;
+        g.fillStyle = p < 60 ? (isBlack(p) ? '#B98F2C' : '#E3C065') : (isBlack(p) ? '#4FA6C2' : '#86D3EA');
+        const top = Math.max(0, y0), h = Math.min(rollH, y1) - top; if (h <= 0) continue;
+        g.beginPath(); g.roundRect ? g.roundRect(x, top, Math.max(w, 2), h, 3) : g.rect(x, top, Math.max(w, 2), h); g.fill();
+      }
+      // keyboard
+      g.fillStyle = '#C9A54A'; g.fillRect(0, rollH, W, 2);
+      whites.forEach((p, i) => { g.fillStyle = down.has(p) ? (p < 60 ? '#E3C065' : '#86D3EA') : '#F3F1EC'; g.fillRect(i * u + .5, rollH + 2, u - 1, kbH - 2); });
+      for (let p = LO; p <= HI; p++) if (isBlack(p)) { const [kx, kw] = keyX(p); g.fillStyle = down.has(p) ? (p < 60 ? '#B98F2C' : '#4FA6C2') : '#141016'; g.fillRect(kx * u, rollH + 2, kw * u, (kbH - 2) * .62); }
+    }
+    const loop = () => { draw(); raf = audio.paused ? 0 : requestAnimationFrame(loop); };
+    async function load(n) {
+      if (n === name) return; name = n; idx = 0;
+      $('#rollTitle').textContent = $('.t b', tracks.find(tr => tr.dataset.src.includes(n))).textContent;
+      try { notes = cache[n] || (cache[n] = await (await fetch('media/notes/' + n + '.json')).json()); } catch { notes = []; }
+      draw();
+    }
+    const slug = li => li.dataset.src.split('/').pop().replace('.mp3', '');
+    audio.addEventListener('play', () => { if (current) load(slug(current)); if (!raf) raf = requestAnimationFrame(loop); });
+    audio.addEventListener('seeked', () => { idx = 0; draw(); });
+    audio.addEventListener('pause', draw);
+    tracks.forEach(li => li.addEventListener('pointerenter', () => { if (audio.paused) load(slug(li)); }));
+    new ResizeObserver(size).observe(cv);
+    load('lullaby-in-ab');
+  })();
 })();
