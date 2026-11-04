@@ -96,7 +96,7 @@
 
   /* ---------- audio: one player for the nav toggle and the composition list ---------- */
   const tracks = $$('.track');
-  const playlist = ['lullaby-in-ab', 'drift', 'berceuse-in-d', 'impromptu-in-eb', 'allegro-in-bb'].map(n => tracks.find(t => t.dataset.src.includes(n))).filter(Boolean);
+  const playlist = ['homecoming', 'lullaby-in-ab', 'drift', 'berceuse-in-d', 'impromptu-in-eb', 'allegro-in-bb'].map(n => tracks.find(t => t.dataset.src.includes(n))).filter(Boolean);
   const audio = new Audio(); audio.preload = 'none';
   let current = null;
   const icon = on => on ? '<svg viewBox="0 0 14 14"><rect x="2" y="1" width="3.5" height="12"/><rect x="8.5" y="1" width="3.5" height="12"/></svg>' : '<svg viewBox="0 0 14 14"><path d="M3 1 L13 7 L3 13 Z"/></svg>';
