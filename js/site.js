@@ -380,7 +380,7 @@
     const loop = () => { draw(); raf = audio.paused ? 0 : requestAnimationFrame(loop); };
     async function load(n) {
       if (n === name) return; name = n; idx = 0;
-      $('#rollTitle').textContent = $('.t b', tracks.find(tr => tr.dataset.src.includes(n))).textContent;
+      const li = tracks.find(tr => tr.dataset.src.includes(n)); $('#rollTitle').textContent = $('.t b', li).textContent; $('#rollSrc').textContent = li.dataset.notes === 'score' ? 'Falling notes from my score' : 'Falling notes, transcribed from the recording';
       try { notes = cache[n] || (cache[n] = await (await fetch('media/notes/' + n + '.json')).json()); } catch { notes = []; }
       draw();
     }
