@@ -56,7 +56,6 @@
           <circle cx="272" cy="122" r="11" fill="#E05873" stroke="#F3F1EC" stroke-width="2"/></g>
         <circle cx="160" cy="58" r="8" fill="#F3F1EC"/>
       </svg>
-      <span class="bubble">Weighing your options?</span>
     </div>
     <div>
       <ol>
@@ -89,7 +88,7 @@
   <span class="bubble hi-bubble" id="hiBubble">Hi, I'm Kevin!</span>
   <span class="bubble obj-label" id="objLabel"></span>
   <a class="badge" href="papers/Hu_UAE_PISA_2022_Maths_Achievement.pdf" target="_blank" rel="noopener" data-cur="Read" aria-label="Latest: my PISA 2022 research paper (PDF)">
-    <svg viewBox="0 0 128 128" aria-hidden="true"><defs><path id="circ" d="M64 64 m-50 0 a50 50 0 1 1 100 0 a50 50 0 1 1 -100 0"/></defs><text><textPath href="#circ">Latest · PISA 2022 paper · read it · </textPath></text></svg>
+    <svg viewBox="0 0 128 128" aria-hidden="true"><defs><path id="circ" d="M64 64 m-50 0 a50 50 0 1 1 100 0 a50 50 0 1 1 -100 0"/></defs><text><textPath href="#circ">Latest · PISA 2022 research paper · </textPath></text></svg>
     <span class="core">New<br>paper</span>
   </a>
   <div class="hero-social">
@@ -106,12 +105,12 @@
       <span class="tag">About me</span>
       <h2 class="sr" id="about-h">About me</h2>
       <div class="lens" id="lens" data-cur="Proof" style="margin-top:1.4rem">
-        <p class="surface">I'm drawn to the moments when intuition is wrong. I expected the sum of ever-smaller fractions to settle down, and the harmonic series <em style="color:var(--velvet)">diverges</em>.</p>
+        <p class="surface">I expected that adding ever-smaller fractions would give a finite total. The harmonic series <em style="color:var(--velvet)">diverges</em>.</p>
         <div class="under" aria-hidden="true"><p class="math">1 + ½ + (⅓ + ¼) + (⅕ + ⋯ + ⅛) + ⋯<br>&gt; 1 + ½ + ½ + ½ + ⋯ = ∞</p></div>
       </div>
       <button class="pill lens-toggle" id="lensBtn" type="button" aria-expanded="false" aria-controls="lens">Show the proof</button>
       <div style="display:grid;gap:1rem;margin-top:1.6rem;max-width:38rem">
-        <p>It took me pages of drafts to find the grouping that proves it, and I came away knowing that terms shrinking to zero is necessary but not enough. Saccheri was so sure of Euclid's parallel postulate that he walked away from hyperbolic geometry. That gap between what feels true and what is true is why I want to study mathematics.</p>
+        <p>It took me pages of drafts to find the grouping that proves it, and I came away knowing that terms shrinking to zero is necessary but not enough. Saccheri was so sure of Euclid's parallel postulate that he walked away from hyperbolic geometry. I want to study maths at university to learn the tools for testing intuition properly.</p>
         <p>I have played the piano since I was three. It taught me to break a hard passage into parts and get each one exactly right, which is how I work through a proof. When a younger pianist with small hands kept asking me for fingerings, I built a model that finds them for any pair of hands instead.</p>
       </div>
     </div>
@@ -137,7 +136,7 @@
     <div class="chapter-copy pop">
       <p class="part">Part one</p>
       <h2 class="chapter-title" id="maths-h">Mathematics</h2>
-      <p class="lede soft">Olympiads, research, a geometry book, and the writing in between. This is what I want to study.</p>
+      <p class="lede soft">Olympiads, research, my geometry book and my writing.</p>
       <nav class="jump" aria-label="Mathematics">
         <a class="pill mag" href="#olympiads">Olympiads</a><a class="pill mag" href="#epq">Research</a><a class="pill mag" href="#book">The book</a><a class="pill mag" href="#writing">Writing</a>
       </nav>
@@ -147,7 +146,7 @@
       <button class="handle" data-v="0" type="button" aria-label="Vertex A. Drag it, or use the arrow keys."></button>
       <button class="handle" data-v="1" type="button" aria-label="Vertex B. Drag it, or use the arrow keys."></button>
       <button class="handle" data-v="2" type="button" aria-label="Vertex C. Drag it, or use the arrow keys."></button>
-      <figcaption><span><i>OI</i> = <b id="oiVal">0.000</b></span><span>√(<i>R</i>² − 2<i>Rr</i>) = <b id="eulVal">0.000</b></span><span class="hand">Euler's theorem holds, however you drag it</span></figcaption>
+      <figcaption><span><i>OI</i> = <b id="oiVal">0.000</b></span><span>√(<i>R</i>² − 2<i>Rr</i>) = <b id="eulVal">0.000</b></span><span class="hand">Euler's formula: OI² = R² − 2Rr</span></figcaption>
     </figure>
   </div>
 </section>
@@ -231,7 +230,7 @@
       <div class="feat-copy pop">
         <span class="tag">Extended Project Qualification</span>
         <h3 class="title" id="epq-h">The Gibbs phenomenon</h3>
-        <p class="lede">Cut a Fourier series off after <i class="math">N</i> terms and it overshoots every jump by about 9%, however large <i class="math">N</i> gets. Can windowing fix that?</p>
+        <p class="lede">Cut a Fourier series off after <i class="math">N</i> terms and it overshoots every jump by about 9%, however large <i class="math">N</i> gets. My EPQ asks how well windowing reduces it.</p>
         <div class="notes">
           <div class="note"><b>≈ 9%</b><span>overshoot that never shrinks as <i>N</i> grows</span></div>
           <div class="note dark"><b>3</b><span>windows compared, from rectangular to Hann</span></div>
@@ -248,13 +247,13 @@
           </div>
         </div>
         <p class="gibbs-out"><span>Overshoot <b id="gOver">0</b> of the jump</span><span>10% to 90% rise <b id="gRise">0</b></span></p>
-        <figcaption class="blue-cap"><span>Fig. 1, square wave, partial sums</span><span>Live</span></figcaption>
+        <figcaption class="blue-cap"><span>Fig. 1, square wave, partial sums</span></figcaption>
       </figure>
     </div>
     <ol class="steps"><li><span>Question</span></li><li><span>Gibbs constant</span></li><li><span>Windows as weights</span></li><li><span>Overshoot vs width</span></li><li><span><b>Dissertation</b></span></li></ol>
     <div class="meta-row">
-      <details class="more-story"><summary><i>+</i> The full story</summary>
-        <div class="story"><p>My question: to what extent do mathematical windowing techniques resolve the Gibbs phenomenon in the Fourier approximation of non-continuous signals?</p><p>I derived the Gibbs constant with help from an undergraduate thesis, then treated each window as a sequence of weights on the Fourier coefficients and measured two things: the overshoot, and how wide the jump becomes.</p><p>No window wins on both. The more a window suppresses the overshoot, the wider the transition gets, so the right window depends on what the signal is for.</p></div>
+      <details class="more-story"><summary><i>+</i> More detail</summary>
+        <div class="story"><p>My question: to what extent do mathematical windowing techniques resolve the Gibbs phenomenon in the Fourier approximation of non-continuous signals?</p><p>I derived the Gibbs constant with help from an undergraduate thesis, then treated each window as a sequence of weights on the Fourier coefficients and measured two things: the overshoot, and how wide the jump becomes.</p><p>None of the windows did best on both. Reducing the overshoot always widened the transition, so the best window depends on the application.</p></div>
       </details>
       <div class="chips" aria-label="Tools"><span>Fourier series</span><span>Python</span><span>Signal processing</span><span>2025 to now</span></div>
     </div>
@@ -269,7 +268,7 @@
       <div class="feat-copy pop">
         <span class="tag velvet">Research paper, 2026</span>
         <h3 class="title" id="pisa-h">Maths achievement in UAE private schools</h3>
-        <p class="lede">A multilevel analysis of PISA 2022: what separates students, and what separates schools?</p>
+        <p class="lede">A multilevel analysis of PISA 2022 data at student and school level.</p>
         <div class="notes">
           <div class="note mist"><b>10,668</b><span>students in 104 private schools</span></div>
           <div class="note"><b>27%</b><span>of score variation lies between schools</span></div>
@@ -296,8 +295,8 @@
     </div>
     <ol class="steps"><li><span>Question</span></li><li><span>PISA 2022 data</span></li><li><span>Two-level models</span></li><li><span>Rubin's rules</span></li><li><span><b>Paper</b></span></li></ol>
     <div class="meta-row">
-      <details class="more-story"><summary><i>+</i> The full story</summary>
-        <div class="story"><p>Dubai's private schools average 497 in PISA maths, among the highest-scoring regions in the world, while the UAE as a whole averages 431. I wanted to know what drives scores inside that system.</p><p>I fitted five two-level hierarchical linear models in MLwiN, combining all plausible values with Rubin's rules and using PISA's sampling weights at both levels.</p><p>Maths self-efficacy, immigrant status, maths anxiety and the school's average socio-economic status were the strongest predictors. The socio-economic gradient is steeper for first-generation immigrants, and anxiety hurts more in more advantaged schools.</p></div>
+      <details class="more-story"><summary><i>+</i> More detail</summary>
+        <div class="story"><p>Dubai's private schools average 497 in PISA maths, among the highest-scoring regions in the world, while the UAE as a whole averages 431. I wanted to find out which factors explain the differences within that system.</p><p>I fitted five two-level hierarchical linear models in MLwiN, combining all plausible values with Rubin's rules and using PISA's sampling weights at both levels.</p><p>Maths self-efficacy, immigrant status, maths anxiety and the school's average socio-economic status were the strongest predictors. The socio-economic gradient is steeper for first-generation immigrants, and anxiety hurts more in more advantaged schools.</p></div>
       </details>
       <div class="chips" aria-label="Tools"><span>MLwiN</span><span>Multilevel modelling</span><span>PISA 2022</span></div>
     </div>
@@ -352,7 +351,7 @@
       <div class="feat-copy pop">
         <span class="tag">St Catharine's College, Cambridge, August 2026</span>
         <h3 class="title" id="rw-h">Random walks on lattices and graphs</h3>
-        <p class="lede">A research paper from the mathematics programme at St Catharine's: how far a random walker strays, whether it comes home, and how long it takes to visit every node of a graph.</p>
+        <p class="lede">A research paper from the mathematics programme at St Catharine's: how far a random walker gets from its start, whether it returns, and how long it takes to visit every node of a graph.</p>
         <div class="notes">
           <div class="note"><b>1/√(πn)</b><span>roughly the chance a 1D walker is home after 2n steps</span></div>
           <div class="note dark"><b>17</b><span>pages, from ℤ to k-regular graphs</span></div>
@@ -378,7 +377,7 @@
     </div>
     <ol class="steps"><li><span>Walk on ℤ</span></li><li><span>Walk on ℤ²</span></li><li><span>k-regular graphs</span></li><li><span>Variations</span></li><li><span><b>Paper</b></span></li></ol>
     <div class="meta-row">
-      <details class="more-story"><summary><i>+</i> What's in it</summary>
+      <details class="more-story"><summary><i>+</i> Summary</summary>
         <div class="story"><p>On the line ℤ, the walker's position follows Pascal's triangle divided by powers of 2, its variance grows linearly with the number of steps, and Stirling's approximation gives a return probability of about 1/√(πn). Those terms sum to infinity, so the walk is recurrent: it comes back to the start.</p><p>On the grid ℤ², a change to diagonal coordinates splits the walk into two independent one-dimensional walks, and the same argument shows it is recurrent too. The paper then studies walks on finite k-regular graphs, including how long it takes to visit every node, and ends with variations closer to real life, including counting non-intersecting walks with the Lindström–Gessel–Viennot lemma.</p></div>
       </details>
       <div class="chips"><span>Probability</span><span>Stirling's approximation</span><span>LGV lemma</span><span>Cambridge, 2026</span></div>
@@ -391,17 +390,17 @@
 <section class="band b-navy" id="book" aria-labelledby="book-h">
   <div class="wrap feat">
     <figure class="print pop" style="--r:-3deg;max-width:340px;justify-self:center;padding-bottom:.7rem">
-      <img src="media/book-front.webp" width="640" height="934" loading="lazy" alt="Front cover of Beyond the Incenter by Kevin Hu: a triangle with its circumcircle, incircle and nine-point circle in gold and blue on navy">
+      <img src="media/book-front.webp" width="778" height="1116" loading="lazy" alt="Front cover of Beyond the Incenter: A Modern Collection on Olympiad Geometry, by Kevin Hu, 2026 edition">
     </figure>
     <div class="feat-copy pop">
       <span class="tag">Book</span>
       <h2 class="title" id="book-h"><i style="font-weight:500">Beyond the Incenter</i></h2>
-      <p class="lede soft">A Modern Monograph on Olympiad Geometry. First edition, August 2026.</p>
+      <p class="lede soft">A Modern Collection on Olympiad Geometry. 2026 edition.</p>
       <div class="notes">
         <div class="note"><b>100+</b><span>olympiad geometry problems with commentary</span></div>
         <div class="note mist"><b>7</b><span>chapters and nearly 180 diagrams, all in LaTeX</span></div>
       </div>
-      <p style="margin-top:1rem;max-width:36rem">From the triangle's five centres to cross ratios, radical axes, projective geometry and spiral similarity. Each problem compares more than one route, so the reader sees why the clean solution works and the coordinate bash doesn't.</p>
+      <p style="margin-top:1rem;max-width:36rem">It covers the triangle's five centres, cross ratios, radical axes, projective geometry and spiral similarity. Many problems are solved in more than one way, so synthetic methods can be compared with coordinate and trigonometric ones.</p>
       <p class="hand" style="font-size:1.35rem;color:var(--gold);max-width:32rem;line-height:1.3">At a school of over a thousand students, I found three people who knew Menelaus's theorem.</p>
       <div class="links"><a class="pill solid mag" href="https://www.amazon.co.uk/dp/B0HCDN9VFL" target="_blank" rel="noopener" data-cur="Buy">Buy on Amazon <span class="arr">↗</span></a><a class="pill mag" href="https://kevinvariant08.github.io/cross-ratios.pdf" target="_blank" rel="noopener" data-cur="Read">Sample chapter <span class="arr">↗</span></a></div>
     </div>
@@ -457,7 +456,7 @@
         <span class="tag velvet">Maths Society magazine</span>
         <h2 class="title" id="wr-h">The legendary 12&#8209;coin problem</h2>
         <p class="lede">Twelve coins, at most one fake, a balance and three weighings. My article solves it twice: by minimax casework, then with a 3 × 12 matrix.</p>
-        <p class="soft" style="max-width:34rem">Each row is a weighing: −1 is the left pan, 1 the right, 0 off the scale. If no column is zero, no two columns are equal or opposite, and each row sums to zero, the three readings point at exactly one coin. Pick a fake.</p>
+        <p class="soft" style="max-width:34rem">Each row is a weighing: −1 is the left pan, 1 the right, 0 off the scale. If no column is zero, no two columns are equal or opposite, and each row sums to zero, the three readings point at exactly one coin.</p>
       </div>
       <div class="blue lab" id="lab" style="--r:.8deg">
         <div class="lab-row">
@@ -467,7 +466,7 @@
         <div class="coins" id="coins" role="group" aria-label="Choose the fake coin"></div>
         <div class="lab-out"><div class="scales" id="scales"></div><div class="scroll-x"><table class="matrix" id="matrix" aria-label="Weighing matrix"></table></div></div>
         <p class="verdict" id="verdict" aria-live="polite"></p>
-        <p class="blue-cap"><span>Fig. 2, the weighing matrix from my article</span><span>Live</span></p>
+        <p class="blue-cap"><span>Fig. 2, the weighing matrix from my article</span></p>
       </div>
     </div>
     <h3 class="title" style="font-size:clamp(1.8rem,3.6vw,2.8rem);margin-top:clamp(4rem,8vw,6rem)">More writing &amp; solutions</h3>
@@ -489,14 +488,14 @@
     <div class="chapter-copy pop">
       <p class="part">Part two</p>
       <h2 class="chapter-title" id="music-h">Music</h2>
-      <p class="lede soft">Piano since I was three: a near-perfect 49/50 ARSM distinction, among the highest recorded ARSM scores globally; 194/200 in GCSE Music, the highest mark in the world; competition prizes in four countries; and my own compositions.</p>
+      <p class="lede soft">I have played the piano since I was three. My ARSM diploma scored 49/50, among the highest recorded ARSM scores globally, and my 194/200 in GCSE Music was the highest mark in the world. I have won prizes in four countries, and I also compose.</p>
       <nav class="jump" aria-label="Music">
         <a class="pill mag" href="#piano">Recordings</a><a class="pill mag" href="#awards">Prizes</a><a class="pill mag" href="#compositions">Compositions</a>
       </nav>
     </div>
     <div class="keys-wrap pop">
       <div class="keys" id="keys" role="group" aria-label="A playable octave, C4 to C5"></div>
-      <p class="hand keys-note">An octave from C4. It plays, so go ahead.</p>
+      <p class="hand keys-note">C4 to C5</p>
     </div>
   </div>
 </section>
@@ -511,7 +510,7 @@
         <h3 class="big" id="pi-h">At the <em>piano</em></h3>
       </div>
       <div class="pop">
-        <p class="lede">I achieved a near-perfect 49/50 distinction in my ARSM performance diploma, among the highest recorded ARSM scores globally: one mark short of the maximum, with full marks for performance as a whole. My 2025 GCSE Music mark of 194/200 was the highest in the world, and I write my own music too: a piano concerto, variations and pieces for one and two pianos.</p>
+        <p class="lede">Recordings of my playing, my competition results, and my own pieces: a piano concerto, variations, and works for one and two pianos.</p>
         <div class="notes"><div class="note velvet"><b>1st</b><span>Steinway Piano Competition GCC, 2025</span></div><div class="note"><b>49/50</b><span>ARSM distinction, among the highest recorded globally</span></div></div>
       </div>
     </div>
@@ -574,7 +573,7 @@
   <div class="wrap">
     <p class="part">Also</p>
     <h2 class="chapter-title" id="proj-h" style="font-size:clamp(2.8rem,7vw,5.6rem)">Projects</h2>
-    <p class="lede soft">Software I've written, mostly for people learning maths, plus one for pianists that sits between my two subjects.</p>
+    <p class="lede soft">Software I've written, mostly for maths students, and one tool for pianists.</p>
   </div>
 </section>
 
@@ -586,7 +585,7 @@
       <div class="feat-copy pop">
         <span class="tag">Website, 2025 to now</span>
         <h3 class="title" id="kv-h">Kevinvariant</h3>
-        <p class="lede">My free site for Oxbridge admissions tests and olympiads: original mock papers with worked solutions, and tools for practising them properly.</p>
+        <p class="lede">My free site for Oxbridge admissions tests and olympiads: original mock papers with worked solutions, and practice tools.</p>
         <div class="notes">
           <div class="note"><b>12</b><span>TMUA mock sets, A to L</span></div>
           <div class="note dark"><b>6</b><span>ESAT mock sets, A to F</span></div>
@@ -639,7 +638,7 @@
       <h3 class="title" id="ff-h">FingerFlow</h3>
       <p class="lede soft">Upload a photo of a score and your hand span, and FingerFlow suggests piano fingerings that suit your hands.</p>
       <div class="notes">
-        <div class="note"><b>71.4%</b><span>how often human pianists agree: the real ceiling</span></div>
+        <div class="note"><b>71.4%</b><span>agreement between human pianists, the upper limit for any model</span></div>
       </div>
       <p class="soft" style="max-width:34rem;margin-top:.6rem">Each finger-to-finger move gets a biomechanical cost (key geometry, span scaled to the hand, legato, tempo), and a second-order Viterbi decoder finds the cheapest sequence. Weights are learnt from the PIG dataset of human fingerings.</p>
       <div class="links"><a class="pill solid mag" href="https://github.com/MarcAlKareh/fingerflow" target="_blank" rel="noopener" data-cur="Code">Code on GitHub <span class="arr">↗</span></a></div>
@@ -702,7 +701,7 @@
 
 <footer class="band b-deep contact" id="contact" aria-labelledby="ct-h">
   <div class="wrap">
-    <h2 class="giant" id="ct-h">Let's talk<i>.</i></h2>
+    <h2 class="giant" id="ct-h">Contact<i>.</i></h2>
     <div class="contact-row">
       <a class="addr" href="mailto:kevin96496@gmail.com" data-cur="Email">kevin96496@gmail.com</a>
       <button class="pill solid mag copy" type="button" data-copy="kevin96496@gmail.com" data-cur="Copy">Copy email</button>
